@@ -3,6 +3,8 @@ class CreateChatrooms < ActiveRecord::Migration[6.1]
     create_table :chatrooms do |t|
       t.references :student, foreign_key: { to_table: :users }
       t.references :teacher, foreign_key: { to_table: :users }
+      t.string :name
+      
       t.timestamps
     end
   end

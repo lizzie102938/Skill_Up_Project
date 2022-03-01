@@ -1,3 +1,3 @@
 class Skill < ApplicationRecord
-  validates :uniqueness
+  validates :name, uniqueness: true
 end
