@@ -1,13 +1,13 @@
-class ReviewPolicy < ApplicationPolicy
+class ChatroomPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
 
   def show?
-    true
+    record.user == user
   end
 
   def new?
@@ -15,18 +15,6 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def create?
-    record.user == user
-  end
-
-  def edit?
-    update?
-  end
-
-  def update?
-    record.user == user
-  end
-
-  def destroy?
     record.user == user
   end
 end
