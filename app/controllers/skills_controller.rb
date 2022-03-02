@@ -8,8 +8,10 @@ class SkillsController < ApplicationController
   def show
     @skill = Skill.find(params[:id])
     @user_skills = @skill.user_skills
+    @users = []
     @user_skills.each do |skill|
-      p skill.user
+      @users << skill.user
     end
   end
+  authorize @users
 end
