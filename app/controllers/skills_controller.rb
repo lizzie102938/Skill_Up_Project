@@ -2,12 +2,14 @@ class SkillsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @skills = Skill.all
+    @skills = policy_scope(Skill)
   end
 
   def show
     @skill = Skill.find(params[:id])
-    @users = User.all
-    @users = User.where(@users.user_skills.name == @skill.name)
+    @user_skills = @skill.user_skills
+    @user_skills.each do |skill|
+      p skill.user
+    end
   end
 end
