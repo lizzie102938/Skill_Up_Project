@@ -1,16 +1,16 @@
 .button-main {
-  background-color: #264143;
+  background-color: $darkgreen;
   border-radius: 15px;
   padding: 0.4rem 0.7rem;
-  color: white;
+  color: $white;
   font-size: 1rem;
   transition: 0.1s;
   font-weight: bolder;
 }
 
 .button-main:hover {
-  background-color:white;
-  color: #264143;
+  background-color: $white;
+  color: $darkgreen;
   transition: 0.1s;
   border-width: 3px;
 }
