@@ -1,0 +1,29 @@
+.skill-card {
+  height: 35vh;
+  width: 12vw;
+  border: 0.15rem solid $darkgreen;
+  margin: 1rem;
+  text-align: center;
+  background-color: $beige;
+  box-shadow: 0.3vh 0.3vh 5px $darkgreen;
+  border-radius: 20px;
+}
+
+.skill-card-img {
+  width: 8vw;
+  height: 8vw;
+  border: 2px solid $darkgreen;
+  border-radius: 50%;
+  margin: 0.8rem 0;
+  background-color: $white;
+  box-shadow: 0.3vh 0.3vh 5px $darker-rose;
+}
+
+.skill-card p {
+  padding: 0.5vh;
+  font-size: 1.5vh;
+}
+
+.user-name-card {
+  font-size: 2.5vh;
+}
