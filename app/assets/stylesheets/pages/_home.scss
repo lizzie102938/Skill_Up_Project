@@ -1,9 +1,19 @@
 // Specific CSS for your home-page
 h1 {
   font-family: 'Shizuru', cursive;
-  color:$darkgreen;
+  color: $darkgreen;
 }
 
 .homescreen {
   display: flex;
+}
+
+.leftscreen {
+  width: 50%;
+  background-color: $darker-rose;
+}
+
+.rightscreen {
+  width: 50%;
+  background-color: $beige;
 }
