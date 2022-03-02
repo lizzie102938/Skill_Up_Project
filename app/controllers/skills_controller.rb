@@ -7,11 +7,7 @@ class SkillsController < ApplicationController
 
   def show
     @skill = Skill.find(params[:id])
-    @user_skills = @skill.user_skills
-    @users = []
-    @user_skills.each do |skill|
-      @users << skill.user
-    end
+    authorize @skill
+    @users = policy_scope(User).joins(:user_skills).where(user_skills: { skill: @skill })
   end
-  authorize @users
 end
