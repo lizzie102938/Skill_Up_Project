@@ -22,6 +22,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:remote, :message, :student_id, :teacher_id, :date, :user_skill_id)
+    params.require(:booking).permit(:remote, :message, :date)
   end
 end
