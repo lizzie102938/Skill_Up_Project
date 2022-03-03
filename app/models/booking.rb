@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
   has_many :reviews
   belongs_to :student, class_name: "User"
   belongs_to :teacher, class_name: "User"
+  belongs_to :user_skill
 
   # Validation
   validates :message, :status, :skill, presence: true
