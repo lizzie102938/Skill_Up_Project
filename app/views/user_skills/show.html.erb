@@ -1,17 +1,26 @@
 <div class="d-flex justify-content-between">
-  <div class="teacher_profil">
-    <%= image_tag @user_skill.user.image %>
-    <img class="skill-card-img" src="https://i.pinimg.com/originals/05/34/01/053401c399000c51b72f51e73d577beb.jpg">
-    <h2 class="user-name-card"><%= @user_skill.user.username %></h2>
-    <p><%= @user_skill.user.location %></p>
-    <p><%= @user_skill.user.language %></p>
-    <p><%= @user_skill.user.age %></p>
-    <p><%= @user_skill.user.description %></p>
+
+  <div class="teacher-profile">
+    <div class="picture-profile">
+      <%= image_tag @user_skill.user.image, class:'img-circle' %>
+    </div>
+    <div>
+      <h2 class="teacher-information"><%= @user_skill.user.username %></h2>
+      <p><%= @user_skill.user.location %></p>
+      <p><%= @user_skill.user.language %></p>
+      <p><%= @user_skill.user.age %></p>
+      <p><%= @user_skill.user.description %></p>
+    </div>
   </div>
+
   <%= simple_form_for [@user_skill, @booking] do |f| %>
-    <%= f.input :remote, as: :boolean %>
-    <%= f.input :message %>
-    <%= f.input :date %>
-    <%= f.submit %>
-  <% end %>
+    <div class="booking-form">
+      <h2>Send your request</h2>
+      <%= f.input :remote, as: :boolean %>
+      <%= f.input :message %>
+      <%= f.input :date %>
+      <%= f.submit class:'button-main' %>
+    </div>
+    <% end %>
+
 </div>
