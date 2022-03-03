@@ -5,6 +5,6 @@ class Booking < ApplicationRecord
   belongs_to :teacher, class_name: "User"
 
   # Validation
-  validates :message, :status, :skill, :remote, presence: true
+  validates :message, :status, :skill, presence: true
   validates :status, inclusion: { in: ['pending', 'rejected', 'accepted', 'finished', 'canceled'] }
 end

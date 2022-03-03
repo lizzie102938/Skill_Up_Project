@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @booking.status = 'pending'
     @booking.student_id = current_user.id
     @booking.teacher_id = @user_skill.id
+    @booking.remote = params[:booking][:remote] == '0' ? false : true
     authorize @booking
     if @booking.save!
       redirect_to dashboard_path
