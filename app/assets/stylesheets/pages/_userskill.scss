@@ -28,6 +28,7 @@
 }
 
 .booking-form {
+  position: relative;
   padding: 1.5em;
   margin-left: 1.5em;
   border-radius: 10px;
@@ -39,4 +40,15 @@
   .button-main {
     margin-top: 15px;
   }
+}
+
+.booking-form::after {
+  content: "";
+  background-image: asset-url("Cool_Kids_Bust");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-position: right;
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
 }
