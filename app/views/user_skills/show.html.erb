@@ -9,7 +9,7 @@
     <p><%= @user_skill.user.description %></p>
   </div>
   <%= simple_form_for [@user_skill, @booking] do |f| %>
-    <%= f.input :remote %>
+    <%= f.input :remote, as: :boolean %>
     <%= f.input :message %>
     <%= f.input :date %>
     <%= f.submit %>
