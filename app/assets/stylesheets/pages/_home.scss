@@ -1,1 +1,100 @@
 // Specific CSS for your home-page
+html {
+  min-height: 100%;
+}
+
+h1 {
+  font-family: "Shizuru", cursive;
+  font-size: 85px;
+  color: $darkgreen;
+  padding-bottom: 60px;
+}
+
+h5 {
+  color: $darkgreen;
+  padding-bottom: 60px;
+  font-size: 27px;
+  font-family: $body-font;
+  font-weight: 300px;
+}
+
+.homescreen {
+  display: flex;
+  height: 93vh;
+}
+
+.search-home {
+  display: flex;
+}
+
+.centre {
+  padding: 5%;
+}
+
+.avatar:hover {
+  cursor: pointer;
+}
+
+.leftscreen {
+  width: 50%;
+  background-color: $darker-rose;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rightscreen {
+  width: 50%;
+  background-color: $beige;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.avatar-home {
+  width: 70px;
+  border-radius: 50%;
+  border: 3px solid $orange;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+}
+
+.cartoon {
+  background-image: asset-url("cool_kids.svg");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y: 30%;
+}
+
+.link-to-index {
+  padding-top: 45px;
+  font-size: 24px;
+  font-family: "Work Sans", "Helvetica", "sans-serif";
+  padding-left: 7px;
+  font-weight: bolder;
+}
+
+a:hover {
+  transition: 0.2s ease-in;
+  text-decoration: underline;
+  color: white;
+}
+
+a {
+  color: $darkgreen;
+  text-decoration: none;
+}
+// .content-container {
+//   padding: 0;
+//   margin: 0;
+//   border: 0;
+// }
+
+// .container {
+//   padding: 0;
+//   margin: 0;
+//   border: 0;
+// }
