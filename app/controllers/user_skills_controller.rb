@@ -4,5 +4,6 @@ class UserSkillsController < ApplicationController
   def show
     @user_skill = UserSkill.find(params[:id])
     authorize @user_skill
+    @booking = Booking.new
   end
 end
