@@ -1,5 +1,5 @@
 <div>
   <% @skills.each do |skill| %>
-    <%= skill.name %>
+    <%= link_to skill.name, skill_path(skill) %>
   <% end %>
 </div>
