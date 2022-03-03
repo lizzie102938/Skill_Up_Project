@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user_skill_id = @user_skill.id
     @booking.skill = @skill
+  
     raise
     @booking.save
     authorize @booking
