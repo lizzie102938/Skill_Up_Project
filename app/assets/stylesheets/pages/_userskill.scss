@@ -5,15 +5,25 @@
   flex: 0 0 50%;
 }
 
-.img-circle {
-  align-self: center;
-  width: 200px;
-  // object-fit: cover;
-  background-size: cover;
+.teacher-information {
+  display: flex;
+  padding: 1.5em;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-.teacher-information {
 
+.img-rectangle {
+  align-self: center;
+  width: 300px;
+  // object-fit: cover;
+  background-size: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.teacher-description {
+  padding: 1.5em;
 }
 
 .booking-form {
@@ -23,6 +33,6 @@
   background-color: $beige;
   display: flex;
   flex-direction: column;
-  align-content: space-between;
+  align-items: stretch;
   flex: 0 0 50%;
 }
