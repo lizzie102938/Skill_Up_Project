@@ -11,3 +11,6 @@ class SkillsController < ApplicationController
     @users = policy_scope(User).joins(:user_skills).where(user_skills: { skill: @skill })
   end
 end
+
+
+
