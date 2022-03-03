@@ -1,8 +1,8 @@
-<div class="skill-card-sorting"> <% @users.each do |user| %>
+<div class="skill-card-sorting"><% @users.each do |user| %>
   <div class="skill-card" <%= link_to user_skill_path(UserSkill.where(user: user, skill: @skill).first) %>>
     <img class="skill-card-img" src="https://i.pinimg.com/originals/05/34/01/053401c399000c51b72f51e73d577beb.jpg">
     <h2 class="user-name-card"><%= user.username %></h2>
-    <p><%= user_skill.description %></p>
+    <p><%= @user_skills.description %></p>
   </div>
  <% end %>
 </div>
