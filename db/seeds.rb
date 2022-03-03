@@ -68,7 +68,7 @@ puts "Skills created 💃"
 puts "Creating 16 user_skills..."
 UserSkill.create(user: katie, skill: english, description: "I am a native speaker!")
 UserSkill.create(user: katie, skill: coding, description: "I learned coding Le Wagon. I specialise on Ruby.")
-UserSkill.create(user: janosch, skill: guitar, description: "I thought myself how to play the guitar and joind a band 2 years ago.")
+UserSkill.create(user: janosch, skill: guitar, description: "I taught myself how to play the guitar and joined a band 2 years ago.")
 UserSkill.create(user: max, skill: knitting, description: "I learned knitting from my Grandma!")
 UserSkill.create(user: michael, skill: mandarin, description: "I grew up in China - so I'm fluent in mandarin.")
 UserSkill.create(user: michael, skill: tennis, description: "I played for my college team.")
