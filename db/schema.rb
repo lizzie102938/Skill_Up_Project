@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2022_03_02_164635) do
   create_table "user_skills", force: :cascade do |t|
     t.bigint "skill_id", null: false
     t.bigint "user_id", null: false
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["skill_id"], name: "index_user_skills_on_skill_id"
