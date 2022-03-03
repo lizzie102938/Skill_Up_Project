@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+html {
+  min-height: 100%;
+}
+
 h1 {
   font-family: 'Shizuru', cursive;
   color: $darkgreen;
