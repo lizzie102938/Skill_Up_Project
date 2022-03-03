@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_02_113659) do
+ActiveRecord::Schema.define(version: 2022_03_02_164635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 2022_03_02_113659) do
     t.bigint "teacher_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_skill_id"
     t.index ["student_id"], name: "index_bookings_on_student_id"
     t.index ["teacher_id"], name: "index_bookings_on_teacher_id"
+    t.index ["user_skill_id"], name: "index_bookings_on_user_skill_id"
   end
 
   create_table "chatrooms", force: :cascade do |t|
@@ -68,6 +70,7 @@ ActiveRecord::Schema.define(version: 2022_03_02_113659) do
   create_table "user_skills", force: :cascade do |t|
     t.bigint "skill_id", null: false
     t.bigint "user_id", null: false
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["skill_id"], name: "index_user_skills_on_skill_id"
