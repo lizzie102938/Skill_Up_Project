@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.teacher = @user_skill.user
     @booking.remote = params[:booking][:remote] == '0' ? false : true
     authorize @booking
-    if @booking.save!
+    if @booking.save
       redirect_to dashboard_path
     else
       render 'user_skills/show'
