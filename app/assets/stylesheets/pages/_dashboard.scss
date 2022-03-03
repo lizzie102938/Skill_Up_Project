@@ -1,7 +1,52 @@
-[data-tab-content] {
-  display: none;
+.skill-card-img-profile {
+  width: 10vw;
+  height: 10vw;
+  border: 2px solid $darkgreen;
+  border-radius: 50%;
+  margin: 1.2rem 0;
+  background-color: $white;
+  box-shadow: 0.3vh 0.3vh 5px $darker-rose;
 }
 
-.active[data-tab-content] {
-  display: block;
+.left-side-profile {
+  width: 20%;
+  text-align: center;
+}
+
+#profile-id {
+  display: flex;
+  height: 60vh;
+  margin-top: 5vh;
+}
+
+.my-skills {
+  margin: 0 5vh;
+  background-color: $darker-rose;
+  width: 30%;
+  border-radius: 20px;
+}
+
+ul-profile li a {
+  font-size: 10vh;
+}
+
+.biography {
+  margin: 0;
+  background-color: $darker-rose;
+  width: 40%;
+  border-radius: 20px;
+}
+
+.header-styling {
+  margin: 3vh;
+  font-size: 3vh;
+  font-weight: 700;
+  color: $darkgreen;
+}
+
+.skill-profile {
+  background-color: $beige;
+  text-align: center;
+  margin: 3vh;
+  border-radius: 20px;
 }
