@@ -1,0 +1,42 @@
+.teacher-profile {
+  background-color: $beige;
+  border-radius: 10px;
+  display: flex;
+  flex: 0 0 50%;
+}
+
+.teacher-information {
+  text-align: right;
+  display: flex;
+  padding: 1.5em;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+
+.img-rectangle {
+  align-self: center;
+  width: 300px;
+  // object-fit: cover;
+  background-size: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.teacher-description {
+  padding: 1.5em;
+}
+
+.booking-form {
+  padding: 1.5em;
+  margin-left: 1.5em;
+  border-radius: 10px;
+  background-color: $beige;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 0 0 50%;
+  .button-main {
+    margin-top: 15px;
+  }
+}
