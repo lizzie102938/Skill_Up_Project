@@ -1,7 +1,8 @@
 .avatar {
   width: 70px;
+  height: 70px;
+  object-fit: cover;
   border-radius: 50%;
-  border: 3px solid $orange;
 }
 .avatar-large {
   width: 56px;

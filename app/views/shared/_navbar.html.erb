@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
 
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
     <h1>SKILL-UP</h1>
     <% end %>
 
@@ -20,9 +20,9 @@
             <li class="nav-item dropdown">
               <%= image_tag current_user.image, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Profile", "#", class: "dropdown-item" %>
-                <%= link_to "Bookings", "#", class: "dropdown-item" %>
-                <%= link_to "Requests", "#", class: "dropdown-item" %>
+                <%= link_to "Profile", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Bookings", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Requests", dashboard_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
             </li>

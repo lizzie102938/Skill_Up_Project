@@ -14,7 +14,11 @@
 
 .footer a {
   color: $white;
-  padding: 0 15px;
+  padding: 15px;
+}
+
+.footer a:hover {
+  color: $darker-rose;
 }
 
 .page-container {

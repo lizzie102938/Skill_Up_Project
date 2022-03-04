@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-between">
+
+  <div class="teacher-profile">
+    <div class="teacher-information">
+      <%= image_tag @user_skill.user.image, class:'img-rectangle' %>
+      <h2><%= @user_skill.user.username %></h2>
+      <p>I live in <%= @user_skill.user.location %></p>
+      <p>I speak <%= @user_skill.user.language %></p>
+      <p>I am <%= @user_skill.user.age %> years old</p>
+    </div>
+    <div class="teacher-description">
+      <p><%= @user_skill.user.description %></p>
+    </div>
+  </div>
+
+  <div class="booking-form cartoon-form">
+    <%= simple_form_for [@user_skill, @booking] do |f| %>
+      <h2>Send your request to <%= @user_skill.user.username %> for <%= @user_skill.skill.name %></h2>
+      <%= f.input :message %>
+      <%= f.input :date, as: :datetime, html5: true %>
+      <%= f.input :remote, as: :boolean %>
+      <div class="d-grid">
+        <%= f.submit class:'button-main' %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

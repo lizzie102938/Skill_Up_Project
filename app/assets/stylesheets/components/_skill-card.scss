@@ -1,29 +1,66 @@
+.skill-cards h2{
+  text-align: center;
+  color: $darkgreen;
+}
+
 .skill-card {
-  height: 35vh;
-  width: 12vw;
+  height: 45vh;
+  width: 15vw;
   border: 0.15rem solid $darkgreen;
   margin: 1rem;
   text-align: center;
   background-color: $beige;
   box-shadow: 0.3vh 0.3vh 5px $darkgreen;
   border-radius: 20px;
+  margin: 5vh 0;
 }
 
 .skill-card-img {
-  width: 8vw;
-  height: 8vw;
+  width: 6vw;
+  height: 6vw;
+  object-fit: cover;
   border: 2px solid $darkgreen;
   border-radius: 50%;
-  margin: 0.8rem 0;
+  margin: 1.2rem 0;
   background-color: $white;
   box-shadow: 0.3vh 0.3vh 5px $darker-rose;
 }
 
+.skill-card h2 {
+  margin: 1vh;
+  font-weight: bolder;
+}
+
+.skillcard {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+}
+
 .skill-card p {
   padding: 0.5vh;
-  font-size: 1.5vh;
+  font-size: 1.75vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  font-weight: 400;
 }
 
 .user-name-card {
   font-size: 2.5vh;
+}
+
+.skill-card-sorting {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+}
+
+.skill-card-sorting a {
+  text-decoration: none;
+  color: $darkgreen;
+  transition: 0.15s;
+}
+
+.skill-card:hover {
+  border: 0.15rem solid $darker-rose;
+  box-shadow: 0.3vh 0.3vh 5px $darker-rose;
 }

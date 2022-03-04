@@ -1,5 +1,12 @@
-<div>
-  <% @skills.each do |skill| %>
-    <%= skill.name %>
-  <% end %>
+<div class="skill-index">
+  <h2>Browse all skills</h2>
+  <div class="skills">
+      <% @skills.each do |skill| %>
+        <%= link_to skill_path(skill), class: "skill-name" do %>
+          <div class="skill-container" >
+            <%= skill.name %>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
 </div>
