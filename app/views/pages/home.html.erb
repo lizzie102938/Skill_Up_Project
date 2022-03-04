@@ -5,15 +5,15 @@
     <h5><strong>Teach</strong> your skills, <strong>earn</strong> points and <strong>learn</strong> new skills for free!</h5>
   <div class="search-home">
   <%= form_tag skills_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
+  <%= text_field_tag :skill,
+    params[:skill],
     class: "search-1",
     placeholder: "Skill"
   %>
   <% end %>
   <%= form_tag skills_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
+  <%= text_field_tag :city,
+    params[:city],
     class: "search-1",
     placeholder: "City"
   %>
@@ -34,11 +34,11 @@
         <% if user_signed_in? %>
           <div class="navbar-right">
             <li class="nav-item dropdown">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag current_user.image, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Profile", "#", class: "dropdown-item" %>
-                <%= link_to "Bookings", "#", class: "dropdown-item" %>
-                <%= link_to "Requests", "#", class: "dropdown-item" %>
+                <%= link_to "Profile", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Bookings", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Requests", dashboard_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
             </li>

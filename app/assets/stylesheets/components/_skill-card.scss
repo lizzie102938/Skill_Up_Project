@@ -1,13 +1,18 @@
-.skill-card {
-  height: 35vh;
-  width: 12vw;
-  border: 0.15rem solid $darkgreen;
-  margin: 1rem;
+.skill-cards h2{
   text-align: center;
+  color: $darkgreen;
+}
+
+.skill-card {
+  height: 45vh;
+  width: 15vw;
+  border: 0.15rem solid $darkgreen;
+  text-align: center;
+  align-items: center;
   background-color: $beige;
   box-shadow: 0.3vh 0.3vh 5px $darkgreen;
   border-radius: 20px;
-  font-weight: bolder;
+  margin: 5vh;
 }
 
 .skill-card-img {
@@ -26,12 +31,18 @@
   font-weight: bolder;
 }
 
+.skillcard {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+}
+
 .skill-card p {
   padding: 0.5vh;
-  font-size: 1.5vh;
-  height: 14vh;
+  font-size: 1.75vh;
   overflow-y: auto;
   scrollbar-width: thin;
+  font-weight: 400;
 }
 
 .user-name-card {
@@ -39,7 +50,8 @@
 }
 
 .skill-card-sorting {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
 }
 
 .skill-card-sorting a {

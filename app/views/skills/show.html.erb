@@ -1,11 +1,15 @@
-<div class="skill-card-sorting">
-  <% @users.each do |user| %>
-    <%= link_to(user_skill_path(user.user_skills.select { |element| element.skill == @skill }.first)) do %>
-    <div class="skill-card">
-      <%= image_tag user.image, class:'skill-card-img' %>
-      <h2 class="user-name-card"><%= user.username %></h2>
-      <p><%= user.user_skills.select { |element| element.skill == @skill }.first.description %></p>
-    </div>
+<div class="skill-cards">
+  <h2><%=@skill.name%></h2>
+  <div class="skill-card-sorting">
+    <% @users.each do |user| %>
+      <%= link_to(user_skill_path(user.user_skills.select { |element| element.skill == @skill }.first)) do %>
+      <div class="skill-card">
+        <%= image_tag user.image, class:'skill-card-img' %>
+        <h2 class="user-name-card"><%= user.username %></h2>
+        <p><%= user.age %> | <%= user.language %></p>
+        <p><%= user.user_skills.select { |element| element.skill == @skill }.first.description %></p>
+      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
