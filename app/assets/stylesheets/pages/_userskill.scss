@@ -1,8 +1,18 @@
+h2 {
+  color: $darkgreen;
+}
+
 .teacher-profile {
   background-color: $beige;
   border-radius: 10px;
   display: flex;
   flex: 0 0 50%;
+  p {
+    color: $darkgreen;
+  }
+  i {
+    color: $darkgreen;
+  }
 }
 
 .teacher-information {
@@ -17,7 +27,7 @@
 .img-rectangle {
   align-self: center;
   width: 300px;
-  // object-fit: cover;
+  box-shadow: 2px 2px 5px $darker-rose;
   background-size: cover;
   border-radius: 5px;
   margin-bottom: 15px;
@@ -39,6 +49,9 @@
   flex: 0 0 50%;
   .button-main {
     margin-top: 15px;
+  }
+  label {
+    color: $darkgreen;
   }
 }
 
