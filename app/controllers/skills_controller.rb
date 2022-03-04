@@ -2,7 +2,11 @@ class SkillsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @skills = policy_scope(Skill)
+    if params[:skill].present?
+      @skills = policy_scope(Skill).where("name ILIKE ?", "%#{params[:skill]}%")
+    else
+      @skills = policy_scope(Skill)
+    end
   end
 
   def show
@@ -11,6 +15,3 @@ class SkillsController < ApplicationController
     @users = policy_scope(User).joins(:user_skills).where(user_skills: { skill: @skill })
   end
 end
-
-
-
