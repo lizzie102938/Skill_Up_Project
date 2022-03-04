@@ -1,5 +1,4 @@
-<script src="app/javascript/controllers/tabs_controller.js" defer></script>
-<ul class="nav justify-content-center">
+<ul class="nav justify-content-center nav-ul">
   <li data-tab-target="#profile" class="nav-item">
     <a class="nav-link active" aria-current="page" href="#">Profile</a>
   </li>
@@ -11,19 +10,26 @@
   </li>
 </ul>
 
-<div class="tab-content">
-  <div id="profile" data-tab-content>
-    <h1>Profile</h1>
-    <p>profile page</p>
+<div class="bookings-container">
+  <h2 class="h2-bookings">My bookings:</h2>
+  <div class="bookings-titles">
+    <h5></h5>
+    <h5>Name</h5>
+    <h5>Skill</h5>
+    <h5>Status</h5>
+    <h5>Date</h5>
+    <h5>Delete</h5>
   </div>
-
-  <div id="Bookings" data-tab-content>
-    <h1>Bookings</h1>
-    <p>Bookings page</p>
-  </div>
-
-  <div id="Requests" data-tab-content>
-    <h1>Requests</h1>
-    <p>Requests page</p>
-  </div>
+  <ul class="bookings-ul">
+    <% @bookings.each do |booking| %>
+    <li class="li-bookings">
+      <div class="li-div-width"><%= image_tag booking.teacher.image, class:"avatar dropdown-toggle"%></div>
+      <div class="li-div-width"><%=booking.teacher.username%></div>
+      <div class="li-div-width"><%=booking.skill%></div>
+      <div class="li-div-width"><%=booking.status%></div>
+      <div class="li-div-width"><%=booking.date%></div>
+      <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(booking), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
+    </li>
+    <% end %>
+  </ul>
 </div>
