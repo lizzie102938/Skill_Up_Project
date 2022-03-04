@@ -1,28 +1,37 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-
-    <%= link_to root_path, class: "navbar-brand" do %>
-    <h1>SKILL-UP</h1>
+    <%= link_to "#", class: "navbar-brand" do %>
+      <h1>SKILL-UP</h1>
     <% end %>
-
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <div class="navbar-right">
             <li class="nav-item active">
               <div class="search-bars">
-                <input class="search-1" type="text" placeholder="Skill">
-                <input class="search-1"type="text" placeholder="City">
-                <button class="button-main" type="button">Search</button>
+              <%= form_tag skills_path, method: :get do %>
+              <%= text_field_tag :skill,
+                params[:skill],
+                class: "search-1",
+                placeholder: "Skill"
+              %>
+              <% end %>
+              <%= form_tag skills_path, method: :get do %>
+              <%= text_field_tag :city,
+                params[:city],
+                class: "search-1",
+                placeholder: "City"
+              %>
+              <%= submit_tag "Search", class: "button-main" %>
+              <% end %>
               </div>
             </li>
             <li class="nav-item dropdown">
               <%= image_tag current_user.image, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Profile", dashboard_path, class: "dropdown-item" %>
-                <%= link_to "Bookings", dashboard_path, class: "dropdown-item" %>
-                <%= link_to "Requests", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Profile", "#", class: "dropdown-item" %>
+                <%= link_to "Bookings", "#", class: "dropdown-item" %>
+                <%= link_to "Requests", "#", class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
             </li>
