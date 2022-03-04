@@ -5,15 +5,15 @@
     <h5><strong>Teach</strong> your skills, <strong>earn</strong> points and <strong>learn</strong> new skills for free!</h5>
   <div class="search-home">
   <%= form_tag skills_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
+  <%= text_field_tag :skill,
+    params[:skill],
     class: "search-1",
     placeholder: "Skill"
   %>
   <% end %>
   <%= form_tag skills_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
+  <%= text_field_tag :city,
+    params[:city],
     class: "search-1",
     placeholder: "City"
   %>
