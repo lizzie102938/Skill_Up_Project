@@ -31,6 +31,11 @@
   text-decoration: none;
   color: $darkgreen;
   font-size: 20px;
+
+  &:hover {
+    border: 0.15rem solid $darker-rose;
+    box-shadow: 0.3vh 0.3vh 5px $darker-rose;
+  }
 }
 
 .skill-name {
