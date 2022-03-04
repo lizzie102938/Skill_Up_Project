@@ -4,10 +4,6 @@
 }
 
 .skill-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   height: 45vh;
   width: 15vw;
   border: 0.15rem solid $darkgreen;
@@ -35,10 +31,15 @@
   font-weight: bolder;
 }
 
+.skillcard {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+}
+
 .skill-card p {
   padding: 0.5vh;
   font-size: 1.75vh;
-  height: 14vh;
   overflow-y: auto;
   scrollbar-width: thin;
   font-weight: 400;
