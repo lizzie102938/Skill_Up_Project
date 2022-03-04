@@ -8,4 +8,8 @@ class PagesController < ApplicationController
       @skills = policy_scope(Skill)
     end
   end
+
+  def dashboard
+    @bookings = Booking.where(student: current_user)
+  end
 end

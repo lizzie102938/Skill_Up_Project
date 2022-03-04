@@ -19,6 +19,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id]).destroy
+    authorize @booking
+    redirect_to dashboard_path :notice => "Your booking has been deleted"
+  end
+
   private
 
   def booking_params
