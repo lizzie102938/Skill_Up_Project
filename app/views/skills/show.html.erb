@@ -1,16 +1,23 @@
-<div class="skill-cards">
-  <h2><%=@skill.name%></h2>
-  <h4 class="Go back"><%= link_to 'Back', :back %></h4>
-  <div class="skill-card-sorting">
-    <% @users.each do |user| %>
-      <%= link_to(user_skill_path(user.user_skills.select { |element| element.skill == @skill }.first)) do %>
-      <div class="skill-card">
-        <%= image_tag user.image, class:'skill-card-img' %>
-        <h2 class="user-name-card"><%= user.username %></h2>
-        <p><%= user.age %> | <%= user.language %></p>
-        <p><%= user.user_skills.select { |element| element.skill == @skill }.first.description %></p>
-      </div>
+<div class="map-results-flexbox">
+  <div class="skill-cards">
+    <h3 class="skill-title"><%=@skill.name%></h3>
+    <div class="skill-card-sorting">
+      <% @users.each do |user| %>
+        <%= link_to(user_skill_path(user.user_skills.select { |element| element.skill == @skill }.first)) do %>
+        <div class="skill-card">
+          <%= image_tag user.image, class:'skill-card-img' %>
+          <h2 class="user-name-card"><%= user.username %></h2>
+          <p><%= user.age %> | <%= user.language %></p>
+          <p><%= user.user_skills.select { |element| element.skill == @skill }.first.description %></p>
+        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+  </div>
+  <div style="width: 100%; height: 550px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+<h5 class="Go back"><%= link_to 'Go back', :back %></h5>

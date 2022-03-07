@@ -23,5 +23,11 @@ class SkillsController < ApplicationController
     if params[:city].present?
       @users = @users.select { |user| user.location.downcase == params[:city].downcase }
     end
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+    end
   end
 end

@@ -13,14 +13,21 @@
 @import "components/index";
 @import "pages/index";
 
+@import "mapbox-gl/dist/mapbox-gl";
+
 .skill-cards h4 a:hover {
   color: $darker-rose;
 }
 
 .back {
   color: $darkgreen;
+  padding-top: 10px;
 }
 
 .back a:hover {
   color: $darker-rose;
+}
+
+.map-results-flexbox {
+  display: flex;
 }
