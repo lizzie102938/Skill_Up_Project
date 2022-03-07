@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user_skill = @user_skill
     @booking.skill = @skill
-    @booking.status = 'pending'
+    @booking.status = 'Pending'
     @booking.student = current_user
     @booking.teacher = @user_skill.user
     @booking.remote = params[:booking][:remote] == '0' ? false : true
@@ -28,6 +28,22 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id]).destroy
     authorize @booking
     redirect_to dashboard_path :notice => "Your booking has been deleted"
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @status = 'Accepted'
+    @booking.status = @status
+    authorize @booking
+    if @booking.update
+      redirect_to dashboard_path
+    else
+      # render 'user_skills/show'
+    end
   end
 
   private
