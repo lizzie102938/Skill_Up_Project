@@ -22,8 +22,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 2vh 0;
-  padding: 5vh;
+  padding: 0 15vh;
   /* border: 1px solid $darkgreen; */
 }
 
@@ -36,9 +35,27 @@ html, body {
   background-color: $beige;
   padding: 3vh;
   box-shadow: 0.3vh 0.3vh 5px $darkgreen;
+  position: absolute;
 }
 
 .explanation-image {
-  height: 30vh;
+  height: 25vh;
   margin: 0 10vh;
+}
+
+.expl-left {
+  justify-content: flex-start;
+}
+
+.expl-right {
+  justify-content: flex-end;
+}
+
+.expl-center {
+  justify-content: center;
+}
+
+.expl-center-left {
+  position: relative;
+  right: 10vh;
 }
