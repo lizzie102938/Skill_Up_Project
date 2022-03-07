@@ -1,6 +1,6 @@
 <div class="skill-cards">
   <h2><%=@skill.name%></h2>
-  <h4><%= link_to "Go back", skills_path(@skill) %>
+  <h4 class="Go back"><%= link_to 'Back', :back %></h4>
   <div class="skill-card-sorting">
     <% @users.each do |user| %>
       <%= link_to(user_skill_path(user.user_skills.select { |element| element.skill == @skill }.first)) do %>
