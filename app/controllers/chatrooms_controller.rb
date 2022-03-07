@@ -4,6 +4,6 @@ class ChatroomsController < ApplicationController
     @message = Message.new
     authorize @chatroom
     authorize @message
-    @bookings = Booking.where(student: current_user)
+    @bookings = Booking.where(student: current_user, teacher: @chatroom.teacher)
   end
 end

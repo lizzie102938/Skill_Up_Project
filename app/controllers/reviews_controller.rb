@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  def show
-    @reviews = Review
-  end
+  # def show
+  #   @reviews = Review
+  # end
 end
