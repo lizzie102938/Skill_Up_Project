@@ -1,17 +1,19 @@
 
 <div class="d-flex justify-content-between">
   <div class="teacher-profile">
-    <div class="teacher-information">
-      <%= image_tag @user_skill.user.image, class:'img-rectangle' %>
-      <h2><%= @user_skill.user.username %></h2>
-      <p>City: <%= @user_skill.user.location %></p>
-      <p>Language: <%= @user_skill.user.language %></p>
-      <p>Age: <%= @user_skill.user.age %> years old</p>
-      <p>Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
-    </div>
-    <div class="teacher-description">
-      <p><%= @user_skill.user.description %></p>
-    </div>
+
+      <div class="teacher-information">
+        <%= image_tag @user_skill.user.image, class:'img-rectangle' %>
+        <h2><%= @user_skill.user.username %></h2>
+        <p>City: <%= @user_skill.user.location %></p>
+        <p>Language: <%= @user_skill.user.language %></p>
+        <p>Age: <%= @user_skill.user.age %> years old</p>
+        <p>Rating: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
+
+      </div>
+      <div class="teacher-description">
+        <p><%= @user_skill.user.description %></p>
+      </div>
   </div>
 
   <div class="booking-form cartoon-form">
