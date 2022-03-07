@@ -10,9 +10,8 @@ class SkillsController < ApplicationController
 
     if params[:city].present?
       @skills = @skills.select { |skill| skill.users.any? { |user| user.location.downcase == params[:city].downcase } }
-      # also need to add case insensitive
     else
-      @skills
+      @skills = policy_scope(Skill)
     end
 
   end
@@ -21,6 +20,8 @@ class SkillsController < ApplicationController
     @skill = Skill.find(params[:id])
     authorize @skill
     @users = policy_scope(User).joins(:user_skills).where(user_skills: { skill: @skill })
-    @users = @users.select { |user| user.location == params[:city] }
+    if params[:city].present?
+      @users = @users.select { |user| user.location.downcase == params[:city].downcase }
+    end
   end
 end
