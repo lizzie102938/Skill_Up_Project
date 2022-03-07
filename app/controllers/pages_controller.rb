@@ -12,4 +12,7 @@ class PagesController < ApplicationController
   def dashboard
     @bookings = Booking.where(student: current_user)
   end
+
+  def how_it_works
+  end
 end

@@ -1,0 +1,44 @@
+html, body {
+  color: $darkgreen;
+}
+
+.how-it-works h1 {
+  text-align: center;
+}
+
+.how-it-works p {
+  font-size: 20px;
+  margin: 0;
+}
+
+.explanations {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid $darkgreen; */
+  width: auto;
+}
+
+.explanation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2vh 0;
+  padding: 5vh;
+  /* border: 1px solid $darkgreen; */
+}
+
+.explanation-info {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  width: max-content;
+  border: 1px solid $darkgreen;
+  background-color: $beige;
+  padding: 3vh;
+  box-shadow: 0.3vh 0.3vh 5px $darkgreen;
+}
+
+.explanation-image {
+  height: 30vh;
+  margin: 0 10vh;
+}
