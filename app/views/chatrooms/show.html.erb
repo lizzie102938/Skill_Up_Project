@@ -1,6 +1,11 @@
 <div class="d-flex justify-content-between">
   <div class="bookings">
+    <% @bookings.each do |booking| %>
+      <p><%= booking.user_skill.user.username %></p>
+      <p><%= booking.date %></p>
+    <% end %>
   </div>
+
   <div class="container chatroom"
       data-controller="chatroom-subscription"
       data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">

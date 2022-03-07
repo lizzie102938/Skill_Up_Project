@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!
 
+  def show
+    
+  end
+
   def create
     @user_skill = UserSkill.find(params[:user_skill_id])
     @skill = @user_skill.skill.name
