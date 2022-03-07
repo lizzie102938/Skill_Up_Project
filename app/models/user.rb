@@ -19,6 +19,9 @@ class User < ApplicationRecord
   has_many :chatrooms_as_teacher, class_name: 'Chatroom', foreign_key: :teacher_id
   has_many :messages, through: :chatrooms
 
+  # picture
+  has_one_attached :photo
+
   # Validation
   validates :location, :language, :age, :description, :points, presence: true
   validates :points, numericality: true

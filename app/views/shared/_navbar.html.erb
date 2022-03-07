@@ -9,21 +9,19 @@
           <div class="navbar-right">
             <li class="nav-item active">
               <div class="search-bars">
-              <%= form_tag skills_path, method: :get do %>
-              <%= text_field_tag :skill,
-                params[:skill],
-                class: "search-1",
-                placeholder: "Skill"
-              %>
-              <% end %>
-              <%= form_tag skills_path, method: :get do %>
-              <%= text_field_tag :city,
-                params[:city],
-                class: "search-1",
-                placeholder: "City"
-              %>
-              <%= submit_tag "Search", class: "button-main" %>
-              <% end %>
+                <%= form_tag skills_path, method: :get do %>
+                  <%= text_field_tag :skill,
+                    params[:skill],
+                    class: "search-1",
+                    placeholder: "Skill"
+                  %>
+                  <%= text_field_tag :city,
+                    params[:city],
+                    class: "search-1",
+                    placeholder: "City"
+                  %>
+                  <%= submit_tag "Search", class: "button-main" %>
+                <% end %>
               </div>
             </li>
             <li class="nav-item dropdown">

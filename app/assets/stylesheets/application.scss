@@ -7,7 +7,12 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "flatpickr/dist/themes/light";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.skill-cards h4 a:hover {
+  color: $darker-rose;
+}
