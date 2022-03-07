@@ -7,14 +7,24 @@
 .navbar-right {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
-.nav-item {
+.navbar-item {
   padding: 1vh;
   display: flex;
   align-items: center;
   color: $darkgreen;
+}
+
+.navbar-link {
+  color: $darkgreen;
+  font-size: 20px;
+
+  &:hover {
+    color: white;
+  }
 }
 
 .nav-item.dropdown {

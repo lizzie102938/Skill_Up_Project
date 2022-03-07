@@ -20,7 +20,7 @@ html {
 
 .homescreen {
   display: flex;
-  height: 93vh;
+  height: 100%;
 }
 
 .search-home {
@@ -49,6 +49,10 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.rightscreen .navbar-link:hover {
+  color: $darker-rose;
 }
 
 .avatar-home {

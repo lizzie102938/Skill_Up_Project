@@ -1,60 +1,56 @@
 <div class="homescreen">
   <div class="leftscreen">
     <div class="centre">
-    <h1>SKILL-UP</h1>
-    <h5><strong>Teach</strong> your skills, <strong>earn</strong> points and <strong>learn</strong> new skills for free!</h5>
-  <div class="search-home">
-  <%= form_tag skills_path, method: :get do %>
-    <%= text_field_tag :skill,
-      params[:skill],
-      class: "search-1",
-      placeholder: "Skill"
-    %>
-    <%= text_field_tag :city,
-      params[:city],
-      class: "search-1",
-      placeholder: "City"
-    %>
-    <%= submit_tag "Search", class: "button-main" %>
-  <% end %>
-</div>
-<h2 class="link-to-index"><%= link_to "Browse all skills", skills_path %></h1>
-
+      <h1>SKILL-UP</h1>
+      <h5><strong>Teach</strong> your skills, <strong>earn</strong> points and <strong>learn</strong> new skills for free!</h5>
+      <div class="search-home">
+        <%= form_tag skills_path, method: :get do %>
+          <%= text_field_tag :skill,
+            params[:skill],
+            class: "search-1",
+            placeholder: "Skill"
+          %>
+          <%= text_field_tag :city,
+            params[:city],
+            class: "search-1",
+            placeholder: "City"
+          %>
+          <%= submit_tag "Search", class: "button-main" %>
+        <% end %>
+      </div>
+      <h2 class="link-to-index"><%= link_to "Browse all skills", skills_path %></h1>
     </div>
   </div>
   <div class="rightscreen">
-   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="background: transparent;">
-  <div class="container-fluid" style="justify-content: flex-end;">
-
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <div class="navbar-right">
-            <li class="nav-item dropdown">
-              <%= image_tag current_user.image, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Profile", dashboard_path, class: "dropdown-item" %>
-                <%= link_to "Bookings", dashboard_path, class: "dropdown-item" %>
-                <%= link_to "Requests", dashboard_path, class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="background: transparent;">
+      <div class="container-fluid" style="justify-content: flex-end;">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+            <% if user_signed_in? %>
+              <div class="navbar-right">
+                <li class="nav-item dropdown">
+                  <%= image_tag current_user.image, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <%= link_to "Profile", dashboard_path, class: "dropdown-item" %>
+                    <%= link_to "Bookings", dashboard_path, class: "dropdown-item" %>
+                    <%= link_to "Requests", dashboard_path, class: "dropdown-item" %>
+                    <%= link_to "How it works", how_it_works_path, class: "dropdown-item" %>
+                    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                  </div>
+                </li>
               </div>
-            </li>
-          </div>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "How it works", how_it_works_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
+            <% else %>
+              <li class="navbar-item">
+                <%= link_to "How it works", how_it_works_path, class: "navbar-link" %>
+              </li>
+              <li class="navbar-item">
+                <%= link_to "Login", new_user_session_path, class: "navbar-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-    <div class="cartoon">
-    </div>
+    <div class="cartoon"></div>
   </div>
 </div>
