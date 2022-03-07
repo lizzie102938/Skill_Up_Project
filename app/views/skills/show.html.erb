@@ -1,6 +1,6 @@
 <div class="map-results-flexbox">
   <div class="skill-cards">
-    <h3 class="skill-title"><%=@skill.name%></h3>
+    <h3 class="skill-title"><%= @skill.name %></h3>
     <div class="skill-card-sorting">
       <% @users.each do |user| %>
         <%= link_to(user_skill_path(user.user_skills.select { |element| element.skill == @skill }.first)) do %>
