@@ -1,35 +1,82 @@
-<ul class="nav justify-content-center nav-ul">
-  <li data-tab-target="#profile" class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Profile</a>
-  </li>
-  <li data-tab-target="#bookings" class="nav-item">
-    <a class="nav-link" href="#">Bookings</a>
-  </li>
-  <li data-tab-target="#requests" class="nav-item">
-    <a class="nav-link" href="#">Requests</a>
-  </li>
+<script src="app/javascript/dashboard.js" defer></script>
+
+<ul class="nav justify-content-center nav-ul tabs">
+  <li data-tab-target="#profile" class="active nav-item tab">Profile</li>
+  <li data-tab-target="#bookings" class="nav-item tab">Bookings</li>
+  <li data-tab-target="#requests" class="nav-item tab">Requests</li>
 </ul>
 
-<div class="bookings-container">
-  <h2 class="h2-bookings">My bookings:</h2>
-  <div class="bookings-titles">
-    <h5></h5>
-    <h5>Name</h5>
-    <h5>Skill</h5>
-    <h5>Status</h5>
-    <h5>Date</h5>
-    <h5>Delete</h5>
+
+<div class="tab-content">
+  <div id="profile" data-tab-content class="profile-container active">
+    <div class="profile-img-text">
+      <ul class="li-profile left-side-profile">
+        <li class="li-div-width"><%= image_tag current_user.image, class:"skill-card-img-profile"%></li>
+        <li class="li-div-width">My name is <%=current_user.username%></li>
+        <li class="li-div-width">I am <%=current_user.age%> years old</li>
+        <li class="li-div-width">I speak: <%=current_user.language%></li>
+      </ul>
+    </div>
+    <div class="skills-i-teach">
+        <h2>Skills I can teach:</h2>
+      <ul class="each-skill">
+        <li>Skill name</li>
+        <p>skill description</p>
+      </ul>
+    </div>
+
+    <div class="biography-profile">
+      <h2>Biography:</h2>
+      <p>Biography text</p>
+    </div>
   </div>
-  <ul class="bookings-ul">
-    <% @bookings.each do |booking| %>
-    <li class="li-bookings">
-      <div class="li-div-width"><%= image_tag booking.teacher.image, class:"avatar dropdown-toggle"%></div>
-      <div class="li-div-width"><%=booking.teacher.username%></div>
-      <div class="li-div-width"><%=booking.skill%></div>
-      <div class="li-div-width"><%=booking.status%></div>
-      <div class="li-div-width"><%=booking.date%></div>
-      <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(booking), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
-    </li>
-    <% end %>
-  </ul>
+
+
+  <div id="bookings" data-tab-content class="bookings-container active">
+    <h2 class="h2-bookings">My bookings:</h2>
+    <div class="bookings-titles">
+      <h5></h5>
+      <h5>Name</h5>
+      <h5>Skill</h5>
+      <h5>Status</h5>
+      <h5>Date</h5>
+      <h5>Delete</h5>
+    </div>
+    <ul class="bookings-ul">
+      <% @bookings.each do |booking| %>
+      <li class="li-bookings">
+        <div class="li-div-width"><%= image_tag booking.teacher.image, class:"avatar dropdown-toggle"%></div>
+        <div class="li-div-width"><%=booking.teacher.username%></div>
+        <div class="li-div-width"><%=booking.skill%></div>
+        <div class="li-div-width"><%=booking.status%></div>
+        <div class="li-div-width"><%=booking.date%></div>
+        <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(booking), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div id="requests" data-tab-content class="bookings-container active" >
+    <h2 class="h2-bookings">My Requests:</h2>
+    <div class="bookings-titles">
+      <h5></h5>
+      <h5>Name</h5>
+      <h5>Skill</h5>
+      <h5>Status</h5>
+      <h5>Date</h5>
+      <h5>Delete</h5>
+    </div>
+    <ul class="bookings-ul">
+      <% @bookings.each do |booking| %>
+      <li class="li-bookings">
+        <div class="li-div-width"><%= image_tag booking.teacher.image, class:"avatar dropdown-toggle"%></div>
+        <div class="li-div-width"><%=booking.teacher.username%></div>
+        <div class="li-div-width"><%=booking.skill%></div>
+        <div class="li-div-width"><%=booking.status%></div>
+        <div class="li-div-width"><%=booking.date%></div>
+        <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(booking), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
