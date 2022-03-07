@@ -1,5 +1,9 @@
 <div class="skill-index">
-  <h2>Browse all skills</h2>
+  <% if params[:skill].present? %>
+    <h2>Your result for <%= params[:skill] %></h2>
+  <% else %>
+    <h2>Browse all skills</h2>
+  <% end %>
   <div class="skills">
       <% @skills.each do |skill| %>
         <%= link_to skill_path(skill, city: params[:city]), class: "skill-name" do %>

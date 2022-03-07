@@ -77,6 +77,11 @@ html {
   font-weight: bolder;
 }
 
+.link-to-index a:hover {
+  color: $darkgreen;
+  border-bottom: 3px solid $white;
+}
+
 a {
   color: $darkgreen;
   text-decoration: none;
