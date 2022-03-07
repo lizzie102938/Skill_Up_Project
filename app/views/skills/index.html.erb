@@ -2,7 +2,7 @@
   <h2>Browse all skills</h2>
   <div class="skills">
       <% @skills.each do |skill| %>
-        <%= link_to skill_path(skill), class: "skill-name" do %>
+        <%= link_to skill_path(skill, city: params[:city]), class: "skill-name" do %>
           <div class="skill-container" >
             <%= skill.name %>
           </div>
