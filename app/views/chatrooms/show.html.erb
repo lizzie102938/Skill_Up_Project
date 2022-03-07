@@ -1,9 +1,17 @@
 <div class="d-flex justify-content-between">
   <div class="bookings">
-    <% @bookings.each do |booking| %>
-      <p><%= booking.user_skill.user.username %></p>
-      <p><%= booking.date %></p>
-    <% end %>
+    <ul class="bookings-ul">
+      <% @bookings.each do |booking| %>
+        <li class="li-bookings">
+          <div class="li-div-width"><%= booking.user_skill.user.username %></div>
+          <div class="li-div-width"><%= booking.date %></div>
+          <div class="li-div-width"><%= booking.remote %></div>
+          <div class="li-div-width"><%= booking.status %></div>
+          <div class="li-div-width"><%= booking.message %></div>
+          <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(booking), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
   <div class="container chatroom"
