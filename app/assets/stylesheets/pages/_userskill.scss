@@ -74,3 +74,19 @@ h2 {
 #booking_message {
   height: 35vh;
 }
+
+.button-main:disabled {
+  background-color: #e9ecef;
+  color: grey;
+  border: 1px solid grey;
+}
+
+.sign-in-link {
+  text-decoration: underline;
+
+ &:hover {
+   text-decoration: none;
+   font-weight: 600;
+   color: $darkgreen;
+ }
+}
