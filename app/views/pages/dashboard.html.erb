@@ -23,22 +23,92 @@
         </ul>
       </div>
       <div class="skills-i-teach">
-          <h2>Skills I can teach:</h2>
+        <h2>Skills I can teach:</h2>
         <ul class="each-skill">
-          <li>Skill name</li>
-          <p>skill description</p>
+          <% @user_skills.each do |user_skill| %>
+          <li><%= user_skill.skill.name %> <%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe,
+            user_skill_path(user_skill), method: :delete %></li>
+            <p> <%= user_skill.description%> </p>
+          <% end %>
         </ul>
+
+        <div class="skill-buttons">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add Skill
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add a skill and a description.</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <%= simple_form_for(@new_skill) do |f| %>
+                    <%= f.input :skill, collection: @skills %>
+                    <%= f.submit %>
+                  <% end %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+            Edit Skill
+          </button>
+          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="biography-profile">
         <h2>Biography:</h2>
-        <p>Biography text</p>
+        <p class="biography-p"><%= current_user.description %></p>
+        <button type="button" class="btn btn-primary biography-button" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+          Edit Bio
+        </button>
+        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModal4Label">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
 
     <div data-tab-content class="bookings-container fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <h2 class="h2-bookings">My bookings:</h2>
+      <h2 class="h2-bookings">My Bookings:</h2>
       <div class="bookings-titles">
         <h5></h5>
         <h5>Name</h5>
