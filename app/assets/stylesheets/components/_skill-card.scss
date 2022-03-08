@@ -1,6 +1,13 @@
-.skill-cards h2{
+.skill-cards h2 {
   text-align: center;
   color: $darkgreen;
+}
+
+.skill-title h3 {
+  text-align: left;
+  // font-weight: 600;
+  // color: $darkgreen;
+  font: $headers-font;
 }
 
 .skill-card {
