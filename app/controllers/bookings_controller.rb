@@ -13,7 +13,15 @@ class BookingsController < ApplicationController
     @booking.remote = params[:booking][:remote] == '0' ? false : true
     authorize @booking
     if @booking.save
-      redirect_to dashboard_path
+      if @booking.student.points >= 10
+        @booking.student.points -= 10
+        @booking.student.save
+        @booking.teacher.points += 10
+        @booking.teacher.save
+        redirect_to dashboard_path
+      else
+        ## add alert
+      end
     else
       render 'user_skills/show'
     end
@@ -22,6 +30,11 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id]).destroy
     authorize @booking
+    @booking.student.points += 10
+    @booking.student.save
+    @booking.teacher.points -= 10
+    @booking.teacher.save
+
     redirect_to dashboard_path :notice => "Your booking has been deleted"
   end
 
