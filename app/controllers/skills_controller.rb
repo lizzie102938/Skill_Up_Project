@@ -13,7 +13,6 @@ class SkillsController < ApplicationController
     else
       @skills = policy_scope(Skill)
     end
-
   end
 
   def show
@@ -21,7 +20,13 @@ class SkillsController < ApplicationController
     authorize @skill
     @users = policy_scope(User).joins(:user_skills).where(user_skills: { skill: @skill })
     if params[:city].present?
-      @users = @users.select { |user| user.location.downcase == params[:city].downcase }
+      @users = @users.where(location: params[:city].capitalize)
+    end
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
     end
   end
 end
