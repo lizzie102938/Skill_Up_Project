@@ -51,7 +51,9 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.status = params[:status]
-    @booking.date = params[:date]
+    if params[:status] == 'Accepted'
+      @booking.date = params[:booking][:date]
+    end
     authorize @booking
     if @booking.save
       redirect_to dashboard_path

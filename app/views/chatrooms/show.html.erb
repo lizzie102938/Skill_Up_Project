@@ -14,14 +14,17 @@
           <% if current_user == booking.student %>
             <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(booking), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
           <% else %>
-            <div class="li-div-width confirmation-action">
+            <div class="li-div-width">
               <%= simple_form_for [booking] do |f| %>
                 <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-                <%= link_to ('<i class="fa fa-user-check"></i>').html_safe, booking_path(booking, status: 'Accepted'), method: :patch, class: "btn btn-cancel", data: { confirm: "Are you sure you want to accept this booking?" } %></div>
-                <%= f.submit %>
+                <%# <%= link_to ('<i class="fa fa-user-check"></i>').html_safe, booking_path(booking, status: 'Accepted'), method: :patch, class: "btn btn-cancel", data: { confirm: "Are you sure you want to accept this booking?" } %>
+                <%= hidden_field_tag :status, 'Accepted' %>
+                <%= button_tag type: 'submit', class: "button postfix" do %>
+                  <i class="fa fa-user-check" ></i>
+                <% end %>
               <% end %>
             </div>
-            <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-user-times"></i>').html_safe, booking_path(booking, status: 'Rejected'), method: :patch, class: "btn btn-cancel", data: { confirm: "Are you sure you want to accept this booking?" }   %></div>
+            <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-user-times"></i>').html_safe, booking_path(booking, status: 'Rejected'), method: :patch, class: "btn btn-cancel", data: { confirm: "Are you sure you want to accept this booking?" } %></div>
           <% end %>
         </li>
       <% end %>
