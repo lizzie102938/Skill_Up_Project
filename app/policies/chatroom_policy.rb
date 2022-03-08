@@ -7,8 +7,7 @@ class ChatroomPolicy < ApplicationPolicy
   end
 
   def show?
-    true
-    # record.user == user
+    record.student == user || record.teacher == user
   end
 
   def new?

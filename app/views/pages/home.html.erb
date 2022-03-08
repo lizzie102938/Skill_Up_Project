@@ -27,6 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto">
             <% if user_signed_in? %>
+            <li class="nav-points">
+              <%= image_tag 'point.png', class:'nav-point' %>
+              <%= current_user.points %>
+            </li>
               <div class="navbar-right">
                 <li class="nav-item dropdown">
                 <% if current_user.image %>

@@ -64,3 +64,15 @@
   margin: 0.5rem;
   border-color: $darkgreen;
 }
+
+.nav-points {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem;
+  font-size: 20px;
+}
+
+.nav-point {
+  height: 5vh;
+}
