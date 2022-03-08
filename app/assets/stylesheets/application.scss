@@ -15,29 +15,45 @@
 
 @import "mapbox-gl/dist/mapbox-gl";
 
-.skill-cards h4 a:hover {
-  color: $darker-rose;
-}
 
-.back {
-  color: $darkgreen;
-  padding-top: 10px;
-}
-
-.back a:hover {
-  color: $darker-rose;
-}
 
 .map-results-flexbox {
   display: flex;
 }
 
 .map-div {
-  border-radius: 5px;
+  border-radius: 10px;
   border: 0.15rem solid $darkgreen;
   display: flex;
 }
 
-#skill-id {
-  color: #264143;
+.sign-up-form {
+  width: 40vw;
+}
+
+#sign-up-title {
+  padding-bottom: 10px;
+}
+
+#log-in-title {
+  padding-bottom: 10px;
+}
+
+.login {
+  background-color: $darkgreen;
+  border-radius: 15px;
+  padding: 0.4rem 0.7rem;
+  color: white;
+  font-size: 1rem;
+  transition: 0.1s;
+  font-weight: bolder;
+  width: 7vw;
+  padding-top: 10px;
+}
+
+.login:hover {
+  background-color: $darker-rose;
+  color: $darkgreen;
+  transition: 0.1s;
+  border-width: 3px;
 }

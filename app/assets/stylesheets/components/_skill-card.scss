@@ -58,7 +58,7 @@
 
 .skill-card-sorting {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr ;
 }
 
 .skill-card-sorting a {
@@ -70,4 +70,8 @@
 .skill-card:hover {
   border: 0.15rem solid $darker-rose;
   box-shadow: 0.3vh 0.3vh 5px $darker-rose;
+}
+
+.skill-cards h4 a:hover {
+  color: $darker-rose;
 }

@@ -12,14 +12,14 @@
         <div class="skill-card">
           <%= image_tag user.image, class:'skill-card-img' %>
           <h2 class="user-name-card"><%= user.username %></h2>
-          <p><%= user.age %> | <%= user.language %></p>
+          <p><%= user.language %></p>
           <p><%= user.user_skills.select { |element| element.skill == @skill}.first.description %></p>
         </div>
         <% end %>
       <% end %>
     </div>
   </div>
-  <div style="width: 500px; height: 550px;"
+  <div class="map-div" style="min-width: 30vw; height: 550px;"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
