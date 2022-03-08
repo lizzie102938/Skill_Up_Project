@@ -11,6 +11,10 @@ class PagesController < ApplicationController
 
   def dashboard
     @bookings = Booking.where(student: current_user)
+    @skills = Skill.all
+    @user_skills = current_user.user_skills
+    @user = current_user
+    @new_skill = UserSkill.new
   end
 
   def how_it_works

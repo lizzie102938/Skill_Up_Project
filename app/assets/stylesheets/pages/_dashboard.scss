@@ -118,19 +118,21 @@
 }
 
 .biography-profile {
-  background-color: $darker-rose;
+  background-color: $beige;
   height: 55vh;
   width: 58vh;
   border-radius: 20px;
   box-shadow: 2px 2px 10px $darkgreen;
+  position: relative;
 }
 
 .skills-i-teach {
-  background-color: $darker-rose;
+  background-color: $beige;
   height: 55vh;
   width: 42vh;
   border-radius: 20px;
   box-shadow: 2px 2px 10px $darkgreen;
+  position: relative;
 }
 
 .skills-i-teach h2,
@@ -152,7 +154,16 @@
 }
 .each-skill {
   margin-top: 2rem;
-  background-color: $beige;
+  list-style: none;
+  margin: auto;
+  width: 80%;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 2px;
+}
+
+.each-skill li {
+  font-weight: 700;
 }
 
 .profile-container.active {
@@ -199,4 +210,64 @@ li button a.active {
 
 .nav-link:focus {
   color: white !important;
+}
+
+.skill-buttons {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+}
+.skill-buttons button {
+  background-color: $darkgreen;
+  border: none;
+  border-radius: 20px;
+  margin: 0 5px;
+}
+
+.skill-buttons button:hover,
+.biography-button:hover {
+  background-color: $darker-rose;
+  color: $darkgreen;
+  border: none;
+  outline: none;
+}
+
+.skill-buttons button:focus,
+.biography-button:focus {
+  background-color: $darker-rose;
+  color: $darkgreen;
+  outline: none !important;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  outline: none;
+}
+
+.skill-buttons button:active,
+.biography-button:active {
+  border: none;
+}
+
+.biography-button {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 40px;
+  right: 40%;
+  width: 20%;
+  background-color: $darkgreen;
+  border: none;
+  border-radius: 20px;
+  margin: 0 5px;
+}
+
+.biography-p {
+  width: 80%;
+  margin: auto;
+  background-color: $beige;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 1.2rem;
 }
