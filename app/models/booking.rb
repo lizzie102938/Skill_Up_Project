@@ -7,5 +7,5 @@ class Booking < ApplicationRecord
 
   # Validation
   validates :message, :status, :skill, presence: true
-  validates :status, inclusion: { in: ['pending', 'rejected', 'accepted', 'finished', 'canceled'] }
+  validates :status, inclusion: { in: ['Pending', 'Rejected', 'Accepted', 'Finished', 'Canceled'] }
 end
