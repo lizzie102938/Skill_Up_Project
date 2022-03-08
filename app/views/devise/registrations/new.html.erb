@@ -15,7 +15,23 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :location,
+                required: true, label: "City" %>
+    <%= f.input :address,
+                required: true %>
+    <%= f.input :language,
+                required: true %>
+    <%= f.input :age,
+                required: true %>
+    <%= f.input :description, :as => :text,
+                required: true %>
   </div>
+
+   username: 'User name'
+        password: 'Password'
+
+  <%# validates :location, :address, :language, :age, :description, presence: true
+  %>
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>

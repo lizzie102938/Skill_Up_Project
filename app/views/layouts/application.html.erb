@@ -21,7 +21,11 @@
       </div>
       <%= render 'shared/flashes' %>
       <div class="<% if !current_page?(root_path) %> content-container container <% end %>"><%= yield %></div>
-      <div class="footer-container"><%= render 'shared/footer' %></div>
+      <div class="footer-container">
+        <% if !current_page?(root_path) %>
+          <%= render 'shared/footer' %>
+        <% end %>
+      </div>
     </div>
  </body>
 </html>

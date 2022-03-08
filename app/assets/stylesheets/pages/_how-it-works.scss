@@ -1,0 +1,140 @@
+html, body {
+  color: $darkgreen;
+}
+
+.how-it-works h1 {
+  text-align: center;
+  margin: 5vh 0;
+}
+
+.how-it-works h2 {
+  margin-top: 5vh;
+}
+
+.how-it-works p {
+  font-size: 23px;
+}
+
+
+.explanations {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid $darkgreen; */
+  width: auto;
+  padding: 5vh 0;
+  margin-bottom: 3vh;
+}
+
+.explanation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15vh;
+}
+
+.explanation-info {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  width: max-content;
+  border: 1px solid $darkgreen;
+  background-color: $beige;
+  padding: 3vh;
+  box-shadow: 0.3vh 0.3vh 5px $darkgreen;
+  z-index: 1;
+}
+
+.explanation-info p {
+  font-size: 20px;
+  margin: 0;
+}
+
+.expl-left {
+  justify-content: flex-start;
+}
+
+.expl-right {
+  justify-content: flex-end;
+}
+
+.expl-center {
+  justify-content: center;
+}
+
+.expl-center-left {
+  position: relative;
+  right: 10vh;
+}
+
+.img {
+  position: relative;
+}
+.img-1 {
+  height: 25vh;
+}
+
+.img-2 {
+  height: 20vh;
+  bottom: 13vh;
+  left: 65vh;
+}
+
+.img-3 {
+  height: 35vh;
+  bottom: 5vh;
+}
+
+.img-4 {
+  z-index: 2;
+  height: 10vh;
+  left: 5vh;
+  bottom: 5vh;
+}
+
+.img-5 {
+  z-index: 2;
+  height: 40vh;
+  right: 12vh;
+}
+
+.img-6 {
+  height: 15vh;
+  bottom: 10vh;
+  right: 50vh;
+}
+
+.img-7 {
+  height: 15vh;
+  bottom: 10vh;
+  left: 15vh;
+  z-index: 2;
+}
+
+.img-8 {
+  height: 40vh;
+  left: 5vh;
+  bottom: 10vh;
+}
+
+.img-9 {
+  height: 10vh;
+  bottom: 9vh;
+  right: 9vh;
+}
+
+.img-10 {
+  top: 10vh;
+}
+
+.img-11 {
+  z-index: 2;
+  height: 10vh;
+  left: 53vh;
+  top: 5vh;
+}
+
+.img-12 {
+  height: 35vh;
+  top: 7vh;
+  right: 5vh;
+}

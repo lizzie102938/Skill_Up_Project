@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [ :home, :how_it_works ]
 
   def home
     if params[:query].present?
@@ -15,5 +15,8 @@ class PagesController < ApplicationController
     @user_skills = current_user.user_skills
     @user = current_user
     @new_skill = UserSkill.new
+  end
+
+  def how_it_works
   end
 end

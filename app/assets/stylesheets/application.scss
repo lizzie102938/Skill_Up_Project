@@ -7,7 +7,37 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "flatpickr/dist/themes/light";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import "mapbox-gl/dist/mapbox-gl";
+
+.skill-cards h4 a:hover {
+  color: $darker-rose;
+}
+
+.back {
+  color: $darkgreen;
+  padding-top: 10px;
+}
+
+.back a:hover {
+  color: $darker-rose;
+}
+
+.map-results-flexbox {
+  display: flex;
+}
+
+.map-div {
+  border-radius: 5px;
+  border: 0.15rem solid $darkgreen;
+  display: flex;
+}
+
+#skill-id {
+  color: #264143;
+}

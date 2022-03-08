@@ -65,3 +65,28 @@ h2 {
   width: 100%;
   opacity: 0.2;
 }
+
+.user-skill-points {
+  margin: 2.5vh 0;
+  font-size: 20px;
+}
+
+#booking_message {
+  height: 35vh;
+}
+
+.button-main:disabled {
+  background-color: #e9ecef;
+  color: grey;
+  border: 1px solid grey;
+}
+
+.sign-in-link {
+  text-decoration: underline;
+
+ &:hover {
+   text-decoration: none;
+   font-weight: 600;
+   color: $darkgreen;
+ }
+}
