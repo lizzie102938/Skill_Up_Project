@@ -17,21 +17,15 @@
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :location,
                 required: true, label: "City" %>
-    <%= f.input :address,
+    <%= f.input :address, label: "Address", placeholder: 'Postcode, City',
                 required: true %>
-    <%= f.input :language,
+    <%= f.association :language,
                 required: true %>
     <%= f.input :age,
                 required: true %>
-    <%= f.input :description, :as => :text,
+    <%= f.input :description, label: "Biography",
                 required: true %>
   </div>
-
-   username: 'User name'
-        password: 'Password'
-
-  <%# validates :location, :address, :language, :age, :description, presence: true
-  %>
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>

@@ -15,18 +15,9 @@
 
 @import "mapbox-gl/dist/mapbox-gl";
 
-.skill-cards h4 a:hover {
-  color: $darker-rose;
-}
 
-.back {
-  color: $darkgreen;
-  padding-top: 10px;
-}
 
-.back a:hover {
-  color: $darker-rose;
-}
+
 
 .map-results-flexbox {
   display: flex;
@@ -36,8 +27,4 @@
   border-radius: 5px;
   border: 0.15rem solid $darkgreen;
   display: flex;
-}
-
-#skill-id {
-  color: #264143;
 }

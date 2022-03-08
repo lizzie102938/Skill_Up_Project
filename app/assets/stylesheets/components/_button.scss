@@ -14,3 +14,12 @@
   transition: 0.1s;
   border-width: 3px;
 }
+
+.back {
+  color: $darkgreen;
+  padding-top: 10px;
+}
+
+.back a:hover {
+  color: $darker-rose;
+}
