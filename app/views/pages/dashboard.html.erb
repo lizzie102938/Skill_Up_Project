@@ -107,29 +107,8 @@
     </div>
 
 
-    <div data-tab-content class="bookings-container fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <h2 class="h2-bookings">My Bookings:</h2>
-      <div class="bookings-titles">
-        <h5></h5>
-        <h5>Name</h5>
-        <h5>Skill</h5>
-        <h5>Status</h5>
-        <h5>Date</h5>
-        <h5>Delete</h5>
-      </div>
-      <ul class="bookings-ul">
-        <% @bookings.each do |booking| %>
-        <li class="li-bookings">
-          <div class="li-div-width"><%= image_tag booking.teacher.image, class:"avatar dropdown-toggle"%></div>
-          <div class="li-div-width"><%=booking.teacher.username%></div>
-          <div class="li-div-width"><%=booking.skill%></div>
-          <div class="li-div-width"><%=booking.status%></div>
-          <div class="li-div-width"><%=booking.date%></div>
-          <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(booking), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
-        </li>
-        <% end %>
-      </ul>
-    </div>
+    <%= render 'shared/my_bookings'  %>
+
 
     <div data-tab-content class="bookings-container fade" id="contact" role="tabpanel" aria-labelledby="contact-tab" >
       <h2 class="h2-bookings">My Requests:</h2>
