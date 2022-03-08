@@ -28,15 +28,18 @@
 }
 
 .sign-up-form {
-  width: 40vw;
+  width: 35vw;
+  margin: auto;
 }
 
 #sign-up-title {
   padding-bottom: 10px;
+  text-align: center;
 }
 
 #log-in-title {
   padding-bottom: 10px;
+  text-align: center;
 }
 
 .login {
@@ -49,6 +52,7 @@
   font-weight: bolder;
   width: 7vw;
   padding-top: 10px;
+  margin-bottom: 10px;
 }
 
 .login:hover {
@@ -56,4 +60,9 @@
   color: $darkgreen;
   transition: 0.1s;
   border-width: 3px;
+}
+
+.log-in-form {
+  width: 30vw;
+  margin: auto;
 }

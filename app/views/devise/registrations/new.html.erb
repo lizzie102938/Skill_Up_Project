@@ -1,5 +1,6 @@
-<h2 id="sign-up-title">Sign up</h2>
 <div class="sign-up-form">
+<h2 id="sign-up-title">Sign up</h2>
+
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
@@ -20,6 +21,8 @@
       <%= f.input :address, label: "Address", placeholder: 'Postcode, City',
                   required: true %>
       <%= f.input :language, collection: ["Spanish", "English", "German", "Mandarin", "French", "Polish", "Russian", "Portuguese", "Japanese"],
+                  required: true %>
+      <%= f.input :skills,   :as => :check_boxes,
                   required: true %>
       <%= f.input :description, label: "Biography",
                   required: true %>
