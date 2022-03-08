@@ -23,3 +23,22 @@
 .back a:hover {
   color: $darker-rose;
 }
+
+.signup {
+  background-color: $darkgreen;
+  border-radius: 15px;
+  padding: 0.4rem 0.7rem;
+  color: white;
+  font-size: 1rem;
+  transition: 0.1s;
+  font-weight: bolder;
+  width: 7vw;
+  padding-top: 10px;
+}
+
+.signup:hover {
+  background-color: $darker-rose;
+  color: $darkgreen;
+  transition: 0.1s;
+  border-width: 3px;
+}
