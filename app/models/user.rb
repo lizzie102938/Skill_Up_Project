@@ -18,8 +18,8 @@ class User < ApplicationRecord
   has_many :skills, through: :user_skills
 
   # chatroom
-  has_many :chatrooms_as_student, class_name: 'Chatroom', foreign_key: :student_id
-  has_many :chatrooms_as_teacher, class_name: 'Chatroom', foreign_key: :teacher_id
+  has_many :chatrooms_as_student, class_name: 'Chatroom', foreign_key: :student_id, dependent: :destroy
+  has_many :chatrooms_as_teacher, class_name: 'Chatroom', foreign_key: :teacher_id, dependent: :destroy
   has_many :messages, through: :chatrooms
 
   # picture
