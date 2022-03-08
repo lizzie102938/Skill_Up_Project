@@ -17,6 +17,7 @@ class PagesController < ApplicationController
     @user = current_user
     @new_skill = UserSkill.new
     @review = Review.new
+    @chatroom = Chatroom.where(student: current_user)
   end
 
   def how_it_works
