@@ -23,6 +23,7 @@ class BookingsController < ApplicationController
         @booking.student.save
         @booking.teacher.points += 10
         @booking.teacher.save
+        @chatroom = Chatroom.create(student: current_user, teacher: @booking.teacher)
         redirect_to dashboard_path
       else
         ## add alert
