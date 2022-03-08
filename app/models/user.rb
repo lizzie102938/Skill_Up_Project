@@ -26,6 +26,6 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   # Validation
-  validates :location, :address, :language, :age, :description, :points, presence: true
-  validates :points, numericality: true
+  validates :location, :address, :language, :age, :description, presence: true
+
 end

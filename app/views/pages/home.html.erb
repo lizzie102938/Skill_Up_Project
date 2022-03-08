@@ -33,7 +33,11 @@
             </li>
               <div class="navbar-right">
                 <li class="nav-item dropdown">
+                <% if current_user.image %>
                   <%= image_tag current_user.image, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <% else %>
+                  <%= image_tag "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <% end %>
                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <%= link_to "Profile", dashboard_path, class: "dropdown-item" %>
                     <%= link_to "Bookings", dashboard_path, class: "dropdown-item" %>
