@@ -36,10 +36,10 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @status = 'Accepted'
-    @booking.status = @status
+    @booking.status = params[:status]
+    @booking.date = params[:date]
     authorize @booking
-    if @booking.update
+    if @booking.save
       redirect_to dashboard_path
     else
       # render 'user_skills/show'
