@@ -15,7 +15,7 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def create?
-    record.user == user
+    record.booking.student == user
   end
 
   def edit?

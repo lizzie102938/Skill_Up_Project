@@ -12,6 +12,12 @@
       <div class="teacher-description">
         <p><%= @user_skill.user.description %></p>
       </div>
+
+      <div>
+        <% @reviews.each do |review| %>
+          <%= review.title %>
+        <% end %>
+      </div>
   </div>
     <div class="booking-form cartoon-form">
       <% if user_signed_in? %>

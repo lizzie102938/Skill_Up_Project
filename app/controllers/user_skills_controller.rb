@@ -5,10 +5,11 @@ class UserSkillsController < ApplicationController
     @user_skill = UserSkill.find(params[:id])
     authorize @user_skill
     @booking = Booking.new
+    @reviews = Review.where(@booking.teacher == @user_skill.user)
   end
 
   def create
-    @user_skill = UserSkill.new()
+    @user_skill = UserSkill.new
     @skill = Skill.find(params[:user_skill][:skill].to_i)
     @user_skill.skill = @skill
     @user_skill.user = current_user
