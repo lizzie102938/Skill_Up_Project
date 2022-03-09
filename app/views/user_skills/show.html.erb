@@ -4,7 +4,7 @@
   <div class="teacher-profile">
 
       <div class="teacher-information">
-        <%#= cl_image_tag @user_skill.user.photo.key, class:'img-rectangle' %>
+        <%= cl_image_tag @user_skill.user.photo.key, class:'img-rectangle' %>
         <div class="teacher-description">
           <h2><%= @user_skill.user.username %></h2>
           <p>City: <%= @user_skill.user.location %></p>
@@ -65,7 +65,7 @@
           <% end %>
         </div>
       <% end %>
-    </div>
 
-  <h5 class="back"><%= link_to 'Go back', :back %></h5>
+    </div>
 </div>
+<h5 class="back"><%= link_to 'Go back', :back %></h5>
