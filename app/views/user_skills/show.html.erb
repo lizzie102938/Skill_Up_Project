@@ -3,7 +3,7 @@
   <div class="teacher-profile">
 
       <div class="teacher-information">
-        <%= image_tag @user_skill.user.image, class:'img-rectangle' %>
+        <%= cl_image_tag @user_skill.user.image, class:'img-rectangle' %>
         <h2><%= @user_skill.user.username %></h2>
         <p>City: <%= @user_skill.user.location %></p>
         <p>Language: <%= @user_skill.user.language %></p>
@@ -11,6 +11,12 @@
       </div>
       <div class="teacher-description">
         <p><%= @user_skill.user.description %></p>
+      </div>
+
+      <div>
+        <% @reviews.each do |review| %>
+          <%= review.title %>
+        <% end %>
       </div>
   </div>
     <div class="booking-form cartoon-form">

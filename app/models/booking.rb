@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
   # Association
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   belongs_to :student, class_name: "User"
   belongs_to :teacher, class_name: "User"
   belongs_to :user_skill
