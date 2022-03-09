@@ -1,12 +1,16 @@
-<div class="skill-index">
-  <h2>Your results</h2>
-  <div class="skills">
-      <% @skills.each do |skill| %>
-        <%= link_to skill_path(skill, city: params[:city]), class: "skill-name" do %>
-          <div class="skill-container" >
-          <%= skill.name %>
-          </div>
-        <% end %>
-      <% end %>
+<div class="index-page">
+  <div class="cartoon-index">
+    <div class="skill-index">
+      <h2>Your results</h2>
+      <div class="skills">
+          <% @skills.each do |skill| %>
+            <%= link_to skill_path(skill, city: params[:city]), class: "skill-name" do %>
+              <div class="skill-container" >
+              <%= skill.name %>
+              </div>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
   </div>
 </div>

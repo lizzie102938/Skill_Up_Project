@@ -7,4 +7,34 @@
 
 #skill-id {
   color: #264143;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 38px;
 }
+
+// .cartoon-index {
+//   position: relative;
+//   z-index: 1;
+//   background-image: url("transparent friends.png");
+//   height: 100%;
+//   width: 100%;
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   }
+
+.index-page {
+  position: relative;
+  z-index: 1;
+  background-image: url("transparent friends.png");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  }
+
+  // .index-page {
+  //   position: relative;
+  //   z-index: 2;
+  //   top: 0px;
+  //   left: 0px;
+  // }
