@@ -6,23 +6,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-            <li class="nav-item active">
-              <div class="search-bars">
-                <%= form_tag skills_path, method: :get do %>
-                  <%= text_field_tag :skill,
-                    params[:skill],
-                    class: "search-1",
-                    placeholder: "Skill"
-                  %>
-                  <%= text_field_tag :city,
-                    params[:city],
-                    class: "search-1",
-                    placeholder: "City"
-                  %>
-                  <%= submit_tag "Search", class: "button-main" %>
-                <% end %>
-              </div>
-            </li>
+            <div class="navbar-search">
+              <li class="nav-item active">
+                <div class="search-bars">
+                  <%= form_tag skills_path, method: :get do %>
+                    <%= text_field_tag :skill,
+                      params[:skill],
+                      class: "search-1",
+                      placeholder: "Skill"
+                    %>
+                    <%= text_field_tag :city,
+                      params[:city],
+                      class: "search-1",
+                      placeholder: "City"
+                    %>
+                    <%= submit_tag "Search", class: "button-main" %>
+                  <% end %>
+                </div>
+              </li>
+            </div>
             <li class="nav-points">
               <%= image_tag 'point.png', class:'nav-point' %>
               <%= current_user.points %>
