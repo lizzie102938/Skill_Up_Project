@@ -4,8 +4,10 @@ class ReviewsController < ApplicationController
     @review = Review.new(params_review)
     @review.booking = @booking
     @booking.user_skill
-    # @review.user_skill = @booking.user_skill
-    # @review.user = @booking.teacher
+
+    # this seems to always give review a user_skill_id of 103. WHY?
+
+    @review.user_skill_id = @booking.user_skill_id
     authorize @review
     if @review.save!
       redirect_to dashboard_path
