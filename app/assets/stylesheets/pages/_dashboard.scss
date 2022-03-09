@@ -88,7 +88,9 @@
   margin: 0;
   padding: 0;
 }
-
+.tabs li button {
+  font-size: 1.2rem;
+}
 .tab {
   cursor: pointer;
   padding: 10px;
@@ -270,4 +272,44 @@ li button a.active {
   border-radius: 5px;
   padding: 5px 10px;
   font-size: 1.2rem;
+}
+
+.delete-bin-li {
+  position: relative;
+}
+
+.delete-trash {
+  position: absolute;
+  right: 0;
+  font-size: 1rem;
+}
+
+.delete-trash:hover {
+  color: $darkgreen;
+  border-bottom: 2px solid $darkgreen;
+  padding: 2px;
+  font-size: 1.5rem;
+}
+
+.edit-skill {
+  position: absolute;
+  right: 30px;
+  font-size: 1rem;
+}
+
+.edit-skill:hover {
+  color: $darkgreen;
+  border-bottom: 2px solid $darkgreen;
+  padding: 2px;
+  font-size: 1.5rem;
+}
+
+.skill-desc {
+  width: 85%;
+}
+
+.submit-button {
+  background-color: $darkgreen;
+  border-radius: 5px;
+  color: white;
 }
