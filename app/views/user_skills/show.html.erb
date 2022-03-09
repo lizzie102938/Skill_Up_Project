@@ -4,7 +4,7 @@
 
       <div class="teacher-information">
       <%# add cl_image_tag %>
-        <%= image_tag @user_skill.user.image, class:'img-rectangle' %>
+        <%= cl_image_tag @user_skill.user.photo.key, class:'img-rectangle' %>
         <div class="teacher-description">
           <h2><%= @user_skill.user.username %></h2>
           <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
