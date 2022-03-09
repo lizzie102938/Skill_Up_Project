@@ -10,7 +10,14 @@
   border-radius: 10px;
   flex: 0 0 60%;
   padding: 1.5em;
+
+  .bookings-ul {
+    margin: 0;
+  }
+
   .li-bookings {
+    width: auto;
+    display: flex;
     margin: 0;
   }
 }
