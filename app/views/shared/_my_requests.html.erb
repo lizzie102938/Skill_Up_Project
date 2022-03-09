@@ -16,7 +16,7 @@
           <div class="li-div-width"><%= request.skill %></div>
           <div class="li-div-width"><%= request.status %></div>
           <div class="li-div-width"><%= request.date %></div>
-          <% chatroom = Chatroom.where(student: current_user, teacher: request.teacher).or(Chatroom.where(teacher: current_user, student: request.student)).last %>
+          <% chatroom = Chatroom.where(student: current_user, teacher: request.teacher).or(Chatroom.where(teacher: current_user, student: request.student)).first %>
           <div class="li-div-width confirmation-action"><%= link_to ('<i class="fas fa-edit"></i>').html_safe, chatroom_path(chatroom, chat: chatroom), class: "btn btn-cancel" %></div>
         </li>
         <% end %>
