@@ -1,5 +1,6 @@
 
 <div class="d-flex justify-content-between">
+
   <div class="teacher-profile">
 
       <div class="teacher-information">
@@ -12,8 +13,8 @@
           <p class="user-sill-quote">"<%= @user_skill.user.description %>"</p>
         </div>
       </div>
-      <div class="teacher-skill">
 
+      <div class="teacher-skill">
         <div class="review-box">
           <h5>My reviews:</h5>
             <% @reviews.each do |review| %>
@@ -24,8 +25,11 @@
             <% end %>
         </div>
       </div>
+
   </div>
+
     <div class="booking-form cartoon-form">
+
       <% if user_signed_in? %>
         <%= simple_form_for [@user_skill, @booking] do |f| %>
           <h2>Send your request to <%= @user_skill.user.username %> for <%= @user_skill.skill.name %></h2>
@@ -36,7 +40,7 @@
             <%= f.submit class:'button-main' %>
           </div>
         <% end %>
-          <p class="user-skill-points">You currently have <%=current_user.points %> points.</p>
+        <p class="user-skill-points">You currently have <%=current_user.points %> points.</p>
       <% else %>
         <p class="user-skill-points">Please <%= link_to "sign in", new_user_session_path, class:"sign-in-link" %> to book a class with <%= @user_skill.user.username %> for <%= @user_skill.skill.name %>.</p>
         <div>
@@ -51,6 +55,8 @@
         </div>
       <% end %>
     </div>
-  </div>
+
+  <%# </div> %>
+
   <h5 class="back"><%= link_to 'Go back', :back %></h5>
 </div>
