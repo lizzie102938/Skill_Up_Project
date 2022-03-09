@@ -16,7 +16,7 @@
     <div data-tab-content class="profile-container fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="profile-img-text">
         <ul class="li-profile left-side-profile">
-          <li class=""><%= image_tag current_user.image, class:"skill-card-img-profile"%></li>
+          <li class=""><%= cl_image_tag current_user.photo.key, class:"skill-card-img-profile"%></li>
           <li class="">My name is <%=current_user.username%></li>
           <li class="">I speak: <%=current_user.language%></li>
           <li class="">I have <%=current_user.points%> points</li>
@@ -105,7 +105,6 @@
         </div>
       </div>
     </div>
-
 
     <%= render 'shared/my_bookings'  %>
 
