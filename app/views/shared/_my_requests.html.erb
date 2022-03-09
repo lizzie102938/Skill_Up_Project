@@ -16,7 +16,8 @@
           <div class="li-div-width"><%= request.skill %></div>
           <div class="li-div-width"><%= request.status %></div>
           <div class="li-div-width"><%= request.date %></div>
-          <div class="li-div-width confirmation-action"><%= link_to ('<i class="fas fa-edit"></i>').html_safe, booking_path(request), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
+          <% chatroom = Chatroom.where(student: current_user, teacher: request.teacher).or(Chatroom.where(teacher: current_user, student: request.student)).first %>
+          <div class="li-div-width confirmation-action"><%= link_to ('<i class="fas fa-edit"></i>').html_safe, chatroom_path(chatroom, chat: chatroom), class: "btn btn-cancel" %></div>
         </li>
         <% end %>
       </ul>
