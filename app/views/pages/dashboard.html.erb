@@ -30,28 +30,28 @@
         <h2>Skills I can teach:</h2>
         <ul class="each-skill">
           <% @user_skills.each do |user_skill| %>
-          <li class="delete-bin-li"><%= user_skill.skill.name %> <%= link_to ('<i class="fa fa-trash fa-lg delete-trash"></i>').html_safe, user_skill_path(user_skill), method: :delete %> <fr data-bs-toggle="modal" data-bs-target="#exampleModal2"> <i class="fa fa-pen fa-lg edit-skill"></i> </fr> </li>
-            <p class="skill-desc"> <%= user_skill.description%> </p>
-            <!-- MODAL FOR EDIT SKILL -->
+            <li class="delete-bin-li"><%= user_skill.skill.name %> <%= link_to ('<i class="fa fa-trash fa-lg delete-trash"></i>').html_safe, user_skill_path(user_skill), method: :delete %> <fr data-bs-toggle="modal" data-bs-target="#exampleModal2"> <i class="fa fa-pen fa-lg edit-skill"></i> </fr> </li>
+              <p class="skill-desc"> <%= user_skill.description%> </p>
+              <!-- MODAL FOR EDIT SKILL -->
 
-          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Edit description</h5>
-                </div>
-                <div class="modal-body">
-                  <%= simple_form_for(user_skill) do |f| %>
-                  <%= f.input :description %>
-                  <%= f.submit value:"Change description", class:"submit-button"%>
-                  <% end %>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Edit description</h5>
+                    </div>
+                    <div class="modal-body">
+                      <%= simple_form_for(user_skill) do |f| %>
+                      <%= f.input :description %>
+                      <%= f.submit value:"Change description", class:"submit-button"%>
+                      <% end %>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
           <% end %>
         </ul>
 
@@ -109,9 +109,6 @@
       </div>
     </div>
 
-
-
-<!-- BOOKINGS CONTAINER  -->
 
     <%= render 'shared/my_bookings'  %>
     <%= render 'shared/my_requests'  %>
