@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :bookings_as_student, class_name: 'Booking', foreign_key: :student_id
   has_many :bookings_as_teacher, class_name: 'Booking', foreign_key: :teacher_id
   has_many :reviews, through: :bookings
+  has_many :reviews
 
   # skills
   has_many :user_skills

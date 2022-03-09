@@ -27,6 +27,7 @@ puts "Users destroyed ! 😭"
 puts "..."
 
 puts "Creating 10 users..."
+
 katie = User.new(
   email: 'user1@example.com',
   password: 'user11',

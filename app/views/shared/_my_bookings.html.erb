@@ -1,0 +1,62 @@
+<div data-tab-content class="bookings-container fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <h2 class="h2-bookings">My Bookings:</h2>
+      <div class="bookings-titles">
+        <h5></h5>
+        <h5>Name</h5>
+        <h5>Skill</h5>
+        <h5>Status</h5>
+        <h5>Date</h5>
+        <h5>Chat</h5>
+        <h5>Delete</h5>
+      </div>
+      <ul class="bookings-ul">
+        <% @bookings.each do |booking| %>
+          <li class="li-bookings">
+            <div class="li-div-width"><%= image_tag booking.teacher.image, class:"avatar dropdown-toggle" %></div>
+            <div class="li-div-width"><%= booking.teacher.username %></div>
+            <div class="li-div-width"><%= booking.skill %></div>
+            <div class="li-div-width"><%= booking.status %></div>
+            <div class="li-div-width"><%= booking.date %></div>
+            <% chatroom = Chatroom.where(student: current_user, teacher: booking.teacher).or(Chatroom.where(teacher: current_user, student: booking.student)).first %>
+            <div class="li-div-width confirmation-action"><%= link_to ('<i class="fas fa-comment-dots"></i>').html_safe, chatroom_path(chatroom, chat: chatroom), class: "btn btn-cancel" %></div>
+            <% if booking.date.present? %>
+              <% if Date.today < booking.date %>
+                <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(booking), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
+              <% else %>
+                <!-- Button trigger modal -->
+                <% if !booking.reviews.present? %>
+                  <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#writeReview">
+                    <%= ('<i class="fas fa-edit"></i>').html_safe %>
+                  </button>
+                <% end %>
+                <!-- Modal -->
+                <div class="modal fade" id="writeReview" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Write your review</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <%= simple_form_for [booking, @review] do |f| %>
+                          <%= f.input :title %>
+                          <%= f.input :rating, collection: 1..5 %>
+                          <%= f.input :content %>
+                          <div class="modal-footer">
+                              <%= f.submit %>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(booking), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
+            <% end %>
+
+
+          </li>
+        <% end %>
+      </ul>
+    </div>
