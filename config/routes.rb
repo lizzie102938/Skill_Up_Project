@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :skills, only: [:index, :show]
-  resources :user_skills, only: [:show, :create, :new, :destroy] do
+  resources :user_skills, only: [:show, :create, :new, :destroy, :edit, :update] do
     resources :bookings, only: [:new, :create]
+    post "description", to: "user_skills#create"
   end
   resources :bookings, only: [:show, :update, :destroy] do
     resources :reviews, only: [:new, :create]

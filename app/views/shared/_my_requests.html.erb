@@ -11,7 +11,7 @@
       <ul class="bookings-ul">
         <% @requests.each do |request| %>
         <li class="li-bookings">
-          <div class="li-div-width"><%= image_tag request.student.image, class:"avatar dropdown-toggle"%></div>
+          <div class="li-div-width"><%= cl_image_tag booking.teacher.photo.key, class:"avatar dropdown-toggle"%></div>
           <div class="li-div-width"><%= request.student.username %></div>
           <div class="li-div-width"><%= request.skill %></div>
           <div class="li-div-width"><%= request.status %></div>

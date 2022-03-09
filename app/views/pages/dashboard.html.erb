@@ -13,22 +13,45 @@
 
   <div class="tab-content" id="myTabContent">
 
+<!-- PROFILE CONTAINER  -->
+
     <div data-tab-content class="profile-container fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="profile-img-text">
         <ul class="li-profile left-side-profile">
+
           <li class=""><%= cl_image_tag current_user.photo.key, class:"skill-card-img-profile"%></li>
-          <li class="">My name is <%=current_user.username%></li>
-          <li class="">I speak: <%=current_user.language%></li>
-          <li class="">I have <%=current_user.points%> points</li>
+          <li class=""><%=current_user.username%></li>
+          <li class="">Language: <%=current_user.language%></li>
+          <li class="">Points:<%=current_user.points%></li>
+          
         </ul>
       </div>
       <div class="skills-i-teach">
         <h2>Skills I can teach:</h2>
         <ul class="each-skill">
           <% @user_skills.each do |user_skill| %>
-          <li><%= user_skill.skill.name %> <%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe,
-            user_skill_path(user_skill), method: :delete %></li>
-            <p> <%= user_skill.description%> </p>
+          <li class="delete-bin-li"><%= user_skill.skill.name %> <%= link_to ('<i class="fa fa-trash fa-lg delete-trash"></i>').html_safe, user_skill_path(user_skill), method: :delete %> <fr data-bs-toggle="modal" data-bs-target="#exampleModal2"> <i class="fa fa-pen fa-lg edit-skill"></i> </fr> </li>
+            <p class="skill-desc"> <%= user_skill.description%> </p>
+            <!-- MODAL FOR EDIT SKILL -->
+
+          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit description</h5>
+                </div>
+                <div class="modal-body">
+                  <%= simple_form_for(user_skill) do |f| %>
+                  <%= f.input :description %>
+                  <%= f.submit value:"Change description", class:"submit-button"%>
+                  <% end %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <% end %>
         </ul>
 
@@ -41,42 +64,22 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Add a skill and a description.</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <%= simple_form_for(@new_skill) do |f| %>
                     <%= f.input :skill, collection: @skills %>
-                    <%= f.submit %>
+                    <%= f.input :description %>
+                    <%= f.submit class:"submit-button"%>
                   <% end %>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
               </div>
             </div>
           </div>
 
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-            Edit Skill
-          </button>
-          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
 
@@ -106,9 +109,11 @@
       </div>
     </div>
 
+
+    
+<!-- BOOKINGS CONTAINER  -->
+
     <%= render 'shared/my_bookings'  %>
-
     <%= render 'shared/my_requests'  %>
-
   </div>
 </div>
