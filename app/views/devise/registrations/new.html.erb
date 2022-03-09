@@ -22,10 +22,10 @@
                   required: true %>
       <%= f.input :language, collection: ["Spanish", "English", "German", "Mandarin", "French", "Polish", "Russian", "Portuguese", "Japanese"],
                   required: true %>
-      <%= f.input :skills,   :as => :check_boxes,
-                  required: true %>
       <%= f.input :description, label: "Biography",
                   required: true %>
+      <%= f.input :photo, as: :file,
+                  required: false %>
     </div>
 
     <div class="form-actions">

@@ -1,0 +1,11 @@
+.map-results-flexbox {
+  display: flex;
+}
+
+.map-div {
+  border-radius: 10px;
+  border: 0.15rem solid $darkgreen;
+  display: flex;
+  position: relative;
+  top: 90px;
+}

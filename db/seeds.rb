@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
 
 #skills, users, bookings(destroy)
 
@@ -33,21 +27,215 @@ puts "Users destroyed ! 😭"
 puts "..."
 
 puts "Creating 10 users..."
-katie = User.create!(image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cG9ydHJhaXR8fHx8fHwxNjQ1NzA4ODQ0&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080', email: 'user1@example.com', password: 'user11', username: 'Katie', points: 90, description: 'I have been using Skill-Up for 2 years teaching English and coding with Ruby on Rails. I can teach remote or in person :)' , language: 'English', location: 'Madrid', address: '28003, Madrid')
-janosch = User.create!(image: 'https://images.unsplash.com/photo-1527082395-e939b847da0d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cG9ydHJhaXR8fHx8fHwxNjQ1NzA4OTkw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080', email: 'user2@example.com', password: 'user22', username: 'Janosch', points: 50, description: 'I live in Berlin and love meeting new people through shared passions', language: 'German', location: 'Berlin', address: '10997, Berlin')
-max = User.create(image: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cG9ydHJhaXR8fHx8fHwxNjQ1NzA5MTA0&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080', email: 'user3@example.com', password: 'user33', username: 'Max', points: 100, description: 'My teaching style is relaxed and fun. Happy to teach at weekends!', language: 'French', location: 'Paris', address: '75007, Paris')
-michael = User.create(image:'https://images.unsplash.com/photo-1531384441138-2736e62e0919?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cG9ydHJhaXR8fHx8fHwxNjQ1NzA5MTM1&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080' , email: 'user4@example.com', password: 'user44', username: 'Michael', points: 20, description: 'I am 36 and have lived in Berlin for 10 years now. Always happy to meet new people', language: 'Mandarin', location: 'Berlin', address: '10435, Berlin')
-enrico = User.create(image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80' , email: 'user5@example.com', password: 'user55', username: 'Enrico', points: 30, description: 'I am new to the city and like teaching. I am not sure what I want to learn yet, but looking forward to seeing what is on offer!', language: 'Spanish', location: 'Madrid', address: '28004, Madrid')
-sarah = User.create(image: 'https://images.unsplash.com/photo-1550546094-9835463f9f71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80', email: 'user6@example.com', password: 'user66', username: 'Sarah', points: 50, description: 'I am outgoing and always love talking to people from all over the World! ', language: 'English', location: 'Berlin', address: '10555, Berlin')
-chloe = User.create(image: 'https://images.unsplash.com/photo-1584361853901-dd1904bb7987?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cG9ydHJhaXR8fHx8fHwxNjQ1NzA5MDQw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080' , email: 'user7@example.com', password: 'user77', username: 'Chloe', points: 40, description: 'Over the years I have used Skill-Up all over the World. I love finding new hobbies to enjoy', language: 'German', location: 'Barcelona', address: '08006, Barcelona')
-juliette = User.create(image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cG9ydHJhaXR8fHx8fHwxNjQ1NzA5MDUx&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080', email: 'user8@example.com', password: 'user88', username: 'Juliette', points: 60, description: 'I am a personal trainer by profession and have lived in Berlin for just 6 months. I want to make more friends in the city.', language: 'Spanish', location: 'Berlin', address: '10247, Berlin')
-paul = User.create(image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2048&q=80', email: 'user9@example.com', password: 'user99', username: 'Paul', points: 10, description: 'This year I want to learn a new skill every month! Hoping I can find some fun people on Skill-Up to help me!', language: 'English', location: 'Madrid', address: '28015, Madrid')
-marie = User.create(image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cG9ydHJhaXR8fHx8fHwxNjQ1NzA5MDY3&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080', email: 'user10@example.com', password: 'user1010', username: 'Marie', points: 20, description: 'I am from France originally but have lived all over the World. I want to socalise whilst learning new things!', language: 'French', location: 'Paris', address: '75010, Paris')
-pierre = User.create!(image: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', email: 'user11@example.com', password: 'user1111', username: 'Pierre', points: 50, description: 'I love meeting new people and learning new things. Really excited to start teaching others!', language: 'French', location: 'Berlin', address: '12459, Berlin')
-charlotte = User.create!(image: 'https://images.unsplash.com/photo-1605406575497-015ab0d21b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80', email: 'user12@example.com', password: 'user1212', username: 'Charlotte', points: 30, description: 'I have just finished studying but really want to learn more about coding and UX/UI design. Happy to teach people my skills too!', language: 'German', location: 'Barcelona', address: '08011, Barcelona')
-francine = User.create!(image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHdvbWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60', email: 'user13@example.com', password: 'user1313', username: 'Francine', points: 50, description: 'I live in New York but am originally from Scotland. I would love to meet new people with similar interests through Skill-Up!', language: 'English', location: 'New York', address: '10017, New York')
-sam = User.create!(image: 'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60', email: 'user14@example.com', password: 'user1414', username: 'Sam', points: 10, description: 'My name is Sam and I am from California. New to Madrid but not new to teaching!', language: 'English', location: 'Madrid', address: '28007, Madrid')
-jan = User.create!(image: 'https://images.unsplash.com/photo-1583195648371-437bf29408ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60', email: 'user15@example.com', password: 'user1515', username: 'Jan', points: 20, description: 'I really want to learn to speak Spanish and also looking for a graphic design teacher!', language: 'German', location: 'Hamburg', address: '20255, Hamburg')
+katie = User.new(
+  email: 'user1@example.com',
+  password: 'user11',
+  username: 'Katie',
+  points: 90,
+  description: 'I have been using Skill-Up for 2 years teaching English and coding with Ruby on Rails. I can teach remote or in person :)',
+  language: 'English',
+  location: 'Madrid',
+  address: '28003, Madrid'
+)
+file1 = URI.open('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91')
+katie.photo.attach(io: file1, filename: 'katie.jpeg', content_type: 'image/jpeg')
+katie.save!
+
+
+janosch = User.new(
+  email: 'user2@example.com',
+  password: 'user22',
+  username: 'Janosch',
+  points: 50,
+  description: 'I live in Berlin and love meeting new people through shared passions',
+  language: 'German',
+  location: 'Berlin',
+  address: '10997, Berlin'
+)
+file2 = URI.open('https://images.unsplash.com/photo-1527082395-e939b847da0d')
+janosch.photo.attach(io: file2, filename: 'janosch.jpeg', content_type: 'image/jpeg')
+janosch.save!
+
+max = User.new(
+  email: 'user3@example.com',
+  password: 'user33',
+  username: 'Max',
+  points: 100,
+  description: 'My teaching style is relaxed and fun. Happy to teach at weekends!',
+  language: 'French',
+  location: 'Paris',
+  address: '75007, Paris'
+)
+file3 = URI.open('https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg')
+max.photo.attach(io: file3, filename: 'max.jpeg', content_type: 'image/jpeg')
+max.save!
+
+michael = User.new(
+   email: 'user4@example.com',
+   password: 'user44',
+   username: 'Michael',
+   points: 20,
+   description: 'I am 36 and have lived in Berlin for 10 years now. Always happy to meet new people',
+   language: 'Mandarin',
+   location: 'Berlin',
+   address: '10435, Berlin'
+  )
+file4 = URI.open('https://images.unsplash.com/photo-1531384441138-2736e62e0919')
+michael.photo.attach(io: file4, filename: 'michael.jpeg', content_type: 'image/jpeg')
+michael.save!
+
+enrico = User.new(
+   email: 'user5@example.com',
+   password: 'user55',
+   username: 'Enrico',
+   points: 30,
+   description: 'I am new to the city and like teaching. I am not sure what I want to learn yet, but looking forward to seeing what is on offer!',
+   language: 'Spanish',
+   location: 'Madrid',
+   address: '28004, Madrid'
+)
+file5 = URI.open('https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg')
+enrico.photo.attach(io: file5, filename: 'enrico.jpeg', content_type: 'image/jpeg')
+enrico.save!
+
+sarah = User.new(
+   email: 'user6@example.com',
+   password: 'user66',
+   username: 'Sarah',
+   points: 50,
+   description: 'I am outgoing and always love talking to people from all over the World! ',
+   language: 'English',
+   location: 'Berlin',
+   address: '10555, Berlin'
+)
+file6 = URI.open('https://images.unsplash.com/photo-1550546094-9835463f9f71')
+sarah.photo.attach(io: file6, filename: 'sarah.jpeg', content_type: 'image/jpeg')
+sarah.save!
+
+chloe = User.new(
+  email: 'user7@example.com',
+  password: 'user77',
+  username: 'Chloe',
+  points: 40,
+  description: 'Over the years I have used Skill-Up all over the World. I love finding new hobbies to enjoy',
+  language: 'German',
+  location: 'Barcelona',
+  address: '08006, Barcelona'
+)
+file7 = URI.open('https://images.pexels.com/photos/1848472/pexels-photo-1848472.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+chloe.photo.attach(io: file7, filename: 'chloe.jpeg', content_type: 'image/jpeg')
+chloe.save!
+
+juliette = User.new(
+   email: 'user8@example.com',
+   password: 'user88',
+   username: 'Juliette',
+   points: 60,
+   description: 'I am a personal trainer by profession and have lived in Berlin for just 6 months. I want to make more friends in the city.',
+   language: 'Spanish',
+   location: 'Berlin',
+   address: '10247, Berlin'
+)
+file8 = URI.open('https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+juliette.photo.attach(io: file8, filename: 'juliette.jpeg', content_type: 'image/jpeg')
+juliette.save!
+
+paul = User.new(
+  email: 'user9@example.com',
+  password: 'user99',
+  username: 'Paul',
+  points: 10,
+  description: 'This year I want to learn a new skill every month! Hoping I can find some fun people on Skill-Up to help me!',
+  language: 'English',
+  location: 'Madrid',
+  address: '28015, Madrid'
+)
+file9 = URI.open('https://images.pexels.com/photos/1121796/pexels-photo-1121796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+paul.photo.attach(io: file9, filename: 'paul.jpeg', content_type: 'image/jpeg')
+paul.save!
+
+marie = User.new(
+   email: 'user10@example.com',
+   password: 'user1010',
+   username: 'Marie',
+   points: 20,
+   description: 'I am from France originally but have lived all over the World. I want to socalise whilst learning new things!',
+   language: 'French',
+   location: 'Paris',
+   address: '75010, Paris'
+)
+file10 = URI.open('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e')
+marie.photo.attach(io: file10, filename: 'marie.jpeg', content_type: 'image/jpeg')
+marie.save!
+
+pierre = User.new(
+   email: 'user11@example.com',
+   password: 'user1111',
+   username: 'Pierre',
+   points: 50,
+   description: 'I love meeting new people and learning new things. Really excited to start teaching others!',
+   language: 'French',
+   location: 'Berlin',
+   address: '12459, Berlin'
+)
+file11 = URI.open('https://images.pexels.com/photos/1270076/pexels-photo-1270076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+pierre.photo.attach(io: file11, filename: 'pierre.jpeg', content_type: 'image/jpeg')
+pierre.save!
+
+charlotte = User.new(
+   email: 'user12@example.com',
+   password: 'user1212',
+   username: 'Charlotte',
+   points: 30,
+   description: 'I have just finished studying but really want to learn more about coding and UX/UI design. Happy to teach people my skills too!',
+   language: 'German',
+   location: 'Barcelona',
+   address: '08011, Barcelona'
+)
+file12 = URI.open('https://images.unsplash.com/photo-1605406575497-015ab0d21b9b')
+charlotte.photo.attach(io: file12, filename: 'charlotte.jpeg', content_type: 'image/jpeg')
+charlotte.save!
+
+francine = User.new(
+  email: 'user13@example.com',
+  password: 'user1313',
+  username: 'Francine',
+  points: 50,
+  description: 'I live in New York but am originally from Scotland. I would love to meet new people with similar interests through Skill-Up!',
+  language: 'English',
+  location: 'New York',
+  address: '10017, New York')
+file13 = URI.open('https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+francine.photo.attach(io: file13, filename: 'francine.jpeg', content_type: 'image/jpeg')
+francine.save!
+
+sam = User.new(
+  email: 'user14@example.com',
+  password: 'user1414',
+  username: 'Sam',
+  points: 10,
+  description: 'My name is Sam and I am from California. New to Madrid but not new to teaching!',
+  language: 'English',
+  location: 'Madrid',
+  address: '28007, Madrid'
+)
+file14 = URI.open('https://images.unsplash.com/photo-1564564321837-a57b7070ac4f')
+sam.photo.attach(io: file14, filename: 'sam.jpeg', content_type: 'image/jpeg')
+sam.save!
+
+jan = User.new(
+  email: 'user15@example.com',
+  password: 'user1515',
+  username: 'Jan',
+  points: 20,
+  description: 'I really want to learn to speak Spanish and also looking for a graphic design teacher!',
+  language: 'German',
+  location: 'Hamburg',
+  address: '20255, Hamburg'
+)
+file15 = URI.open('https://images.unsplash.com/photo-1583195648371-437bf29408ca')
+jan.photo.attach(io: file15, filename: 'jan.jpeg', content_type: 'image/jpeg')
+jan.save!
 
 puts "Users created 💃"
 

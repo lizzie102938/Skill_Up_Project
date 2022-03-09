@@ -3,7 +3,7 @@
   <div class="teacher-profile">
 
       <div class="teacher-information">
-        <%= image_tag @user_skill.user.image, class:'img-rectangle' %>
+        <%= cl_image_tag @user_skill.user.photo.key, class:'img-rectangle' %>
         <h2><%= @user_skill.user.username %></h2>
         <p>City: <%= @user_skill.user.location %></p>
         <p>Language: <%= @user_skill.user.language %></p>

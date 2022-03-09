@@ -16,9 +16,8 @@
     <div data-tab-content class="profile-container fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="profile-img-text">
         <ul class="li-profile left-side-profile">
-          <li class=""><%= image_tag current_user.image, class:"skill-card-img-profile"%></li>
+          <li class=""><%= cl_image_tag current_user.photo.key, class:"skill-card-img-profile"%></li>
           <li class="">My name is <%=current_user.username%></li>
-          <li class="">I am <%=current_user.age%> years old</li>
           <li class="">I speak: <%=current_user.language%></li>
           <li class="">I have <%=current_user.points%> points</li>
         </ul>
@@ -121,7 +120,7 @@
       <ul class="bookings-ul">
         <% @bookings.each do |booking| %>
         <li class="li-bookings">
-          <div class="li-div-width"><%= image_tag booking.teacher.image, class:"avatar dropdown-toggle"%></div>
+          <div class="li-div-width"><%= cl_image_tag booking.teacher.photo.key, class:"avatar dropdown-toggle"%></div>
           <div class="li-div-width"><%=booking.teacher.username%></div>
           <div class="li-div-width"><%=booking.skill%></div>
           <div class="li-div-width"><%=booking.status%></div>
@@ -145,7 +144,7 @@
       <ul class="bookings-ul">
         <% @bookings.each do |booking| %>
         <li class="li-bookings">
-          <div class="li-div-width"><%= image_tag booking.teacher.image, class:"avatar dropdown-toggle"%></div>
+          <div class="li-div-width"><%= cl_image_tag booking.teacher.photo.key, class:"avatar dropdown-toggle"%></div>
           <div class="li-div-width"><%=booking.teacher.username%></div>
           <div class="li-div-width"><%=booking.skill%></div>
           <div class="li-div-width"><%=booking.status%></div>
