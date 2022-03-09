@@ -11,13 +11,19 @@
       <ul class="bookings-ul">
         <% @requests.each do |request| %>
         <li class="li-bookings">
-          <div class="li-div-width"><%= cl_image_tag booking.teacher.photo.key, class:"avatar dropdown-toggle"%></div>
+          <div class="li-div-width"><%= cl_image_tag request.student.photo.key, class:"avatar dropdown-toggle"%></div>
           <div class="li-div-width"><%= request.student.username %></div>
           <div class="li-div-width"><%= request.skill %></div>
           <div class="li-div-width"><%= request.status %></div>
           <div class="li-div-width"><%= request.date %></div>
+          <% @chatroom = Chatroom.where(teacher: request.teacher.id, student: request.student.id).or(Chatroom.where(teacher: request.student.id, student: request.teacher.id)) %>
+          <% if !@chatroom.present? %>
+            <% @chatroom = Chatroom.create(student: current_user, teacher: request.teacher) %>
+          <% else %>
+            <% @chatroom %>
+          <% end %>
           <% chatroom = Chatroom.where(student: current_user, teacher: request.teacher).or(Chatroom.where(teacher: current_user, student: request.student)).first %>
-          <div class="li-div-width confirmation-action"><%= link_to ('<i class="fas fa-edit"></i>').html_safe, chatroom_path(chatroom, chat: chatroom), class: "btn btn-cancel" %></div>
+          <div class="li-div-width confirmation-action"><%= link_to ('<i class="fas fa-edit"></i>').html_safe, chatroom_path(@chatroom, chat: @chatroom.ids.first), class: "btn btn-cancel" %></div>
         </li>
         <% end %>
       </ul>
