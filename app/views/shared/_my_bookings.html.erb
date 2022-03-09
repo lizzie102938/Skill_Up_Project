@@ -16,14 +16,17 @@
             <div class="li-div-width"><%=booking.skill%></div>
             <div class="li-div-width"><%=booking.status%></div>
             <div class="li-div-width"><%=booking.date%></div>
-            <div class="li-div-width confirmation-action"><%= link_to ('<i class="fas fa-comment-dots"></i>').html_safe, chatroom_path(@chatroom), class: "btn btn-cancel" %></div>
+            <% chatroom = Chatroom.where(student: current_user, teacher: booking.teacher).or(Chatroom.where(teacher: current_user, student: booking.student)).first %>
+            <div class="li-div-width confirmation-action"><%= link_to ('<i class="fas fa-comment-dots"></i>').html_safe, chatroom_path(chatroom, chat: chatroom), class: "btn btn-cancel" %></div>
             <% if Date.today + 14 < booking.date  %>
               <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(booking), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
             <% else %>
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#writeReview">
-                <%= ('<i class="fas fa-edit"></i>').html_safe %>
-              </button>
+              <% if !booking.reviews.present? %>
+                <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#writeReview">
+                  <%= ('<i class="fas fa-edit"></i>').html_safe %>
+                </button>
+              <% end %>
               <!-- Modal -->
               <div class="modal fade" id="writeReview" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
