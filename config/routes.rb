@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     post "description", to: "user_skills#create"
   end
   resources :bookings, only: [:show, :update, :destroy] do
-    resources :reviews, only: [:create]
+    resources :reviews, only: [:new, :create]
   end
   resources :chatrooms, only: [:show] do
     resources :messages, only: [:create]
