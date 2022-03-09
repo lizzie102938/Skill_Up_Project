@@ -22,10 +22,12 @@ class SkillsController < ApplicationController
     if params[:city].present?
       @users = @users.where(location: params[:city].capitalize)
     end
-    @markers = @users.geocoded.map do |user|
+    @markers = @users.map do |user|
       {
         lat: user.latitude,
-        lng: user.longitude
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: user }),
+        # image_url: helpers.asset_url("REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS")
       }
     end
   end

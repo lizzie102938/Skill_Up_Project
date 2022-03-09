@@ -23,7 +23,12 @@ class BookingsController < ApplicationController
         @booking.student.save
         @booking.teacher.points += 10
         @booking.teacher.save
-        @chatroom = Chatroom.create(student: current_user, teacher: @booking.teacher)
+        @chatroom = Chatroom.where(teacher: @booking.teacher.id, student: @booking.student.id).or(Chatroom.where(teacher: @booking.student.id, student: @booking.teacher.id))
+        if !@chatroom.present?
+          @chatroom = Chatroom.create(student: current_user, teacher: @booking.teacher)
+        else
+          @chatroom
+        end
         redirect_to dashboard_path
       else
         ## add alert
