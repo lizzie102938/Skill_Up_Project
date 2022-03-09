@@ -23,13 +23,14 @@
 //   }
 
 .index-page {
-  position: relative;
   z-index: 1;
   background-image: url("transparent friends.png");
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
+  background-position: top;
   }
 
   // .index-page {

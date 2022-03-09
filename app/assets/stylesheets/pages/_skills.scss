@@ -1,16 +1,9 @@
-.cartoon-show {
-  position: relative;
-  z-index: 1;
-  background-image: url("Friendly Ones - Friendly Brush Strokes.svg");
-  height: 150%;
-  width: 150%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  }
-
   .show-page {
-    position: relative;
-    z-index: 2;
-    top: 0px;
-    left: 0px;
+    z-index: 1;
+    background-image: url("transparent friends.png");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
   }

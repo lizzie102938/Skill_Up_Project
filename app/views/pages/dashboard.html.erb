@@ -20,10 +20,10 @@
         <ul class="li-profile left-side-profile">
 
           <li class=""><%= cl_image_tag current_user.photo.key, class:"skill-card-img-profile"%></li>
-          <li class=""><%=current_user.username%></li>
-          <li class="">Language: <%=current_user.language%></li>
-          <li class="">Points:<%=current_user.points%></li>
-          
+          <li class="profile-name"><%=current_user.username%></li>
+          <li class=""><i class="fa-solid fa-comment-dots"></i><%=current_user.language%></li>
+          <li class=""><%= image_tag 'point.png', class:'nav-point-dashboard' %></i><%=current_user.points%></li>
+
         </ul>
       </div>
       <div class="skills-i-teach">
@@ -110,7 +110,7 @@
     </div>
 
 
-    
+
 <!-- BOOKINGS CONTAINER  -->
 
     <%= render 'shared/my_bookings'  %>
