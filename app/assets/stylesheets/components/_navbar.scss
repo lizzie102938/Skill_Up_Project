@@ -85,3 +85,11 @@
   display: flex;
   align-items: center;
 }
+
+.dropdown-menu a:active {
+  background-color: $darkgreen;
+}
+
+.dropdown-menu a:hover {
+  background-color: $beige;
+}
