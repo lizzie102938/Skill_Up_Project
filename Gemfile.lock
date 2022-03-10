@@ -135,10 +135,7 @@ GEM
     netrc (0.11.0)
     nio4r (2.5.8)
     nokogiri (1.13.3-x86_64-darwin)
-<<<<<<< HEAD
       racc (~> 1.4)
-=======
->>>>>>> 73c613ef8796dcd7a2ada63a0f234287e53ce313
     nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
