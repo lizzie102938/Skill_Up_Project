@@ -5,7 +5,10 @@ class UserSkillsController < ApplicationController
     @user_skill = UserSkill.find(params[:id])
     authorize @user_skill
     @booking = Booking.new
-    @reviews = Review.where(@booking.teacher)
+    @bookings = Booking.where(user_skill: @user_skill)
+    @reviews = @user_skill.reviews
+    # @user_id = @user_skill.user_id
+    # @user_skills = UserSkill.where(:@user_id)
 
   end
 

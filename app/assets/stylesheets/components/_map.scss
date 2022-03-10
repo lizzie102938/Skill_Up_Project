@@ -2,12 +2,15 @@
   display: flex;
 }
 
+.cartoon-show {
+  position: relative;
+}
+
 .map-div {
-  border-radius: 10px;
+  border-radius: 20px;
   border: 0.15rem solid $darkgreen;
   display: flex;
-  position: relative;
-  // top: 90px;
+  top: 90px;
 }
 
 .mapboxgl-popup {
@@ -15,7 +18,6 @@
 }
 
 .mapboxgl-popup-content {
-  font-size: 12px;
   text-align: center;
   font-family: "Open Sans", sans-serif;
   position: relative;
@@ -24,4 +26,10 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   padding: 5px;
   pointer-events: auto;
+}
+
+#h2-map {
+  font-size: 15px;
+  font-weight: bolder;
+  margin-bottom: 0;
 }

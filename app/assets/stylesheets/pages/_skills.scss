@@ -1,9 +1,11 @@
   .show-page {
     z-index: 1;
-    background-image: url("30 transparent show.png");
+    background-image: asset-url("30_transparent_show.png");
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left;
   }
+
+  // delete comment
