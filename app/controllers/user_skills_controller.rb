@@ -9,7 +9,7 @@ class UserSkillsController < ApplicationController
 
     #this is probably not correct either
 
-    @reviews = Review.where(booking: @bookings)
+    @reviews = @user_skill.reviews
 
   end
 

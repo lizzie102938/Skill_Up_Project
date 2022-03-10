@@ -31,12 +31,12 @@
               <% else %>
                 <!-- Button trigger modal -->
                 <% if !booking.reviews.present? %>
-                  <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#writeReview">
+                  <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#writeReview<%= booking.id %>">
                     <%= ('<i class="fas fa-edit"></i>').html_safe %>
                   </button>
                 <% end %>
                 <!-- Modal -->
-                <div class="modal fade" id="writeReview" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="writeReview<%= booking.id %>" tabindex="-1" aria-labelledby="writeReview<%= booking.id %>Label" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">

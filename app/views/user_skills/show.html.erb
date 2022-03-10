@@ -13,12 +13,12 @@
         </div>
       </div>
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#showReview">
+      <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#showReview<%= @user_skill.id %>">
         <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
       </button>
 
       <!-- Modal -->
-      <div class="modal fade" id="showReview" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="showReview<%= @user_skill.id %>" tabindex="-1" aria-labelledby="showReview<%= @user_skill.id %>Label" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
