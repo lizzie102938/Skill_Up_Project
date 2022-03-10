@@ -1,6 +1,6 @@
 <div class="show-page">
   <div class="cartoon-show">
-    <% if !params[:city].empty? %>
+    <% if params[:city] && !params[:city].empty? %>
       <h2 id="skill-id" class="skill-title"><%= @skill.name %> in <%= params[:city].capitalize %></h2>
     <% else %>
       <h2 id="skill-id" class="skill-title"><%= @skill.name %></h2>
