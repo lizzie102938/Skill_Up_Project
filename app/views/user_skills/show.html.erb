@@ -18,8 +18,16 @@
         </div>
       </div>
       <div class="teacher-information">
-     <%#  <p>I also teach:</p> %>
-      <%= @user_skills%>
+     <div class="other-skills">
+       <p>I also teach: </p>
+        <% @user_skills.each do |user_skill|%>
+          <ul>
+            <li>
+              <p><%= user_skill.name%></p>
+            </li>
+          </ul>
+        <% end %>
+     </div>
       </div>
 
 
