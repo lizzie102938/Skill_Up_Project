@@ -134,8 +134,11 @@ GEM
     msgpack (1.4.5)
     netrc (0.11.0)
     nio4r (2.5.8)
+<<<<<<< HEAD
+=======
     nokogiri (1.13.3-x86_64-darwin)
       racc (~> 1.4)
+>>>>>>> 20fa23834d272f3c407419ec301b821a87f40df5
     nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -263,8 +266,11 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+<<<<<<< HEAD
+=======
   x86_64-darwin-19
   x86_64-darwin-21
+>>>>>>> 20fa23834d272f3c407419ec301b821a87f40df5
   x86_64-linux
 
 DEPENDENCIES
@@ -301,5 +307,8 @@ RUBY VERSION
    ruby 3.0.3p157
 
 BUNDLED WITH
+<<<<<<< HEAD
+=======
    2.3.5
+>>>>>>> 20fa23834d272f3c407419ec301b821a87f40df5
    2.3.7
