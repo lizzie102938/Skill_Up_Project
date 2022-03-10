@@ -1,0 +1,5 @@
+meta_product_name: "Skill-Up"
+meta_title: "Teach your skills, earn points and learn new skills for free!"
+meta_description: "Relevant description"
+meta_image: "30_park.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
