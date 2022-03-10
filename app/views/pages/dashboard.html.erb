@@ -27,13 +27,15 @@
         </ul>
       </div>
       <div class="skills-i-teach">
-        <h2>Skills I can teach:</h2>
-        <ul class="each-skill">
+        <h2>My skills</h2>
+        <div class="each-skill">
           <% @user_skills.each do |user_skill| %>
-            <li class="delete-bin-li"><%= user_skill.skill.name %> <%= link_to ('<i class="fa fa-trash fa-lg delete-trash"></i>').html_safe, user_skill_path(user_skill), method: :delete %> <fr data-bs-toggle="modal" data-bs-target="#exampleModal2"> <i class="fa fa-pen fa-lg edit-skill"></i> </fr> </li>
-              <p class="skill-desc"> <%= user_skill.description%> </p>
+            <div class="skill">
+              <div class="title-description">
+                <h5><%= user_skill.skill.name %></h5>
+                <p class="skill-desc"> <%= user_skill.description%> </p>
+              </div>
               <!-- MODAL FOR EDIT SKILL -->
-
               <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -42,18 +44,21 @@
                     </div>
                     <div class="modal-body">
                       <%= simple_form_for(user_skill) do |f| %>
-                      <%= f.input :description %>
-                      <%= f.submit value:"Change description", class:"submit-button"%>
+                        <%= f.input :description %>
+                        <div class="modal-footer">
+                          <%= f.submit value:"Change description", class:"submit-button"%>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
                       <% end %>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                   </div>
                 </div>
               </div>
+              <div class="delete-bin-li"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, user_skill_path(user_skill), method: :delete %></div>
+              <div class="delete-bin-li" data-bs-toggle="modal" data-bs-target="#exampleModal2"> <i class="fa fa-pen fa-lg"></i></div>
+            </div>
           <% end %>
-        </ul>
+        </div>
 
         <div class="skill-buttons">
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -84,12 +89,14 @@
       </div>
 
       <div class="biography-profile">
-        <h2>Biography:</h2>
+        <h2>About me</h2>
         <p class="biography-p"><%= current_user.description %></p>
-        <button type="button" class="btn btn-primary biography-button" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary biography-button" data-bs-toggle="modal" data-bs-target="#editBiography">
           Edit Bio
         </button>
-        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- Modal -->
+        <div class="modal fade" id="editBiography" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -97,7 +104,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                ...
+                <%# <%= simple_form_for(@user) do |f| %> %>
+                  <%# <%= f.input :description %> %>
+                  <%# <div class="modal-footer"> %>
+                      <%# <%= f.submit %> %>
+                  <%# </div> %>
+                <%# <% end %> %>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -106,9 +118,13 @@
             </div>
           </div>
         </div>
+        <!-- Modal END -->
       </div>
     </div>
 
+
+
+<!-- BOOKINGS CONTAINER  -->
 
     <%= render 'shared/my_bookings'  %>
     <%= render 'shared/my_requests'  %>
