@@ -26,8 +26,8 @@
               </li>
             </div>
             <li class="nav-points">
-              <%= image_tag 'point.png', class:'nav-point' %>
               <%= current_user.points %>
+              <%= image_tag 'point.png', class:'nav-point' %>
             </li>
             <li class="nav-item dropdown">
              <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
