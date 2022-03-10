@@ -36,11 +36,11 @@
                 <p class="skill-desc"> <%= user_skill.description%> </p>
               </div>
               <!-- MODAL FOR EDIT SKILL -->
-              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+              <div class="modal fade" id="skill<%=user_skill.id%>2" tabindex="-1" aria-labelledby="skill<%=user_skill.id%>2Label" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Edit description</h5>
+                      <h5 class="modal-title" id="skill<%=user_skill.id%>Label">Edit description</h5>
                     </div>
                     <div class="modal-body">
                       <%= simple_form_for(user_skill) do |f| %>
@@ -55,7 +55,7 @@
                 </div>
               </div>
               <div class="delete-bin-li"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, user_skill_path(user_skill), method: :delete %></div>
-              <div class="delete-bin-li" data-bs-toggle="modal" data-bs-target="#exampleModal2"> <i class="fa fa-pen fa-lg"></i></div>
+              <div class="delete-bin-li" data-bs-toggle="modal" data-bs-target="#skill<%=user_skill.id%>2"> <i class="fa fa-pen fa-lg edit-skill"></i></div>
             </div>
           <% end %>
         </div>
