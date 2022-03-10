@@ -1,30 +1,32 @@
 <div class="show-page">
   <div class="cartoon-show">
-    <div class="map-results-flexbox">
-      <div class="skill-cards">
-        <% if params[:city] %>
-          <h2 id="skill-id" class="skill-title"><%= @skill.name %> in <%= params[:city].capitalize %></h2>
-        <% else %>
-          <h2 id="skill-id" class="skill-title"><%= @skill.name %></h2>
-        <% end %>
-
-        <div class="skill-card-sorting">
-          <% @users.each do |user| %>
-            <%= link_to(user_skill_path(user.user_skills.select { |element| element.skill == @skill }.first)) do %>
-            <div class="skill-card">
-              <%= cl_image_tag user.photo.key, class:'skill-card-img' %>
-              <h2 class="user-name-card"><%= user.username %></h2>
-              <p><%= user.language %></p>
-              <p><%= user.user_skills.select { |element| element.skill == @skill}.first.description %></p>
-            </div>
+    <% if params[:city] %>
+      <h2 id="skill-id" class="skill-title"><%= @skill.name %> in <%= params[:city].capitalize %></h2>
+    <% else %>
+      <h2 id="skill-id" class="skill-title"><%= @skill.name %></h2>
+    <% end %>
+    <div class="skill-cards">
+      <div class="map-results-flexbox">
+          <div class="skill-card-sorting">
+            <% @users.each do |user| %>
+              <%= link_to(user_skill_path(user.user_skills.select { |element| element.skill == @skill }.first)) do %>
+              <div class="skill-card">
+                <%= cl_image_tag user.photo.key, class:'skill-card-img' %>
+                <h2 class="user-name-card"><%= user.username %></h2>
+                <p><%= user.language %></p>
+                <p><%= user.user_skills.select { |element| element.skill == @skill}.first.description %></p>
+              </div>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
+          </div>
+
       </div>
-      <div class="map-div" style="min-width: 30vw; height: 550px;"
-        data-controller="mapbox"
-        data-mapbox-markers-value="<%= @markers.to_json %>"
-        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="fix-map">
+        <div class="map-div" style="min-width: 30vw; height: 550px;"
+          data-controller="mapbox"
+          data-mapbox-markers-value="<%= @markers.to_json %>"
+          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
     </div>
     <h5 class="Go back"><%= link_to 'Go back', :back %></h5>
