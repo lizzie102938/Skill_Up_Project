@@ -1,12 +1,50 @@
 .bookings-chatroom {
   background-color: $beige;
+  // border-radius: 10px;
+  display: flex;
+}
+
+.bookings {
+  display: flex;
+  background-color: $beige;
   border-radius: 10px;
+  flex: 0 0 60%;
+  padding: 1.5em;
+
+  .bookings-ul {
+    margin: 0;
+  }
+
+  .li-bookings {
+    width: auto;
+    display: flex;
+    margin:  0 0 15px 0;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+}
+
+.my-bookings {
+  border-top: 1px solid $darkgreen;
+  padding-top: 10px;
+}
+
+.li-div-width {
+  display: flex;
+  margin: 0;
+}
+
+.simple-form {
   display: flex;
 }
 
 .chatroom {
   background: $beige;
-  margin-top: 9px;
+  border-radius: 10px;
+  // margin-top: 9px;
+  padding: 1.5em;
   height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
@@ -14,6 +52,8 @@
   flex-grow: 1;
   color: $darkgreen;
   flex: 0 0 40%;
+  margin-left: 1.5em;
+  align-items: stretch;
 
   h1 {
     border-bottom: 1px solid $darkgreen;
@@ -35,12 +75,4 @@
       margin-bottom: 0;
     }
   }
-}
-
-.bookings {
-  display: flex;
-  flex: 0 0 50%;
-  background-color: $beige;
-  border-radius: 10px;
-  flex: 0 0 60%;
 }

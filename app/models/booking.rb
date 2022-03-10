@@ -6,6 +6,6 @@ class Booking < ApplicationRecord
   belongs_to :user_skill
 
   # Validation
-  validates :message, :status, :skill, presence: true
+  validates :message, :status, :skill, :date, presence: true
   validates :status, inclusion: { in: ['Pending', 'Rejected', 'Accepted', 'Finished', 'Canceled'] }
 end
