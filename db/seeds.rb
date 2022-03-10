@@ -137,7 +137,7 @@ juliette = User.new(
    location: 'Berlin',
    address: '10247, Berlin'
 )
-file8 = URI.open('https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', :read_timeout => 3000)
+file8 = URI.open('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', :read_timeout => 3000)
 juliette.photo.attach(io: file8, filename: 'juliette.jpeg', content_type: 'image/jpeg')
 juliette.save!
 
