@@ -9,8 +9,7 @@
   scrollbar-width: thin;
   box-shadow: 2px 2px 6px $darkgreen;
   padding: 1.5em;
-  margin:  0 0 15px 0;
-
+  margin: 0 0 15px 0;
 }
 
 .h2-bookings {
@@ -63,7 +62,6 @@
     color: $darker-rose;
   }
 }
-
 
 .fa-comment-dots {
   color: $darkgreen;
@@ -186,7 +184,7 @@
 .skill {
   display: flex;
   // width: auto;
-  justify-content: flex-start
+  justify-content: flex-start;
 }
 
 .title-description {
@@ -319,7 +317,6 @@ li button a.active {
   background-color: $beige;
 }
 
-
 .delete-trash:hover {
   color: $darkgreen;
   border-bottom: 2px solid $darkgreen;
@@ -333,12 +330,13 @@ li button a.active {
 //   font-size: 1rem;
 // }
 
-// .edit-skill:hover {
-//   color: $darkgreen;
-//   border-bottom: 2px solid $darkgreen;
-//   padding: 2px;
-//   font-size: 1.5rem;
-// }
+.edit-skill:hover {
+  color: $darker-rose;
+  cursor: pointer;
+  //   border-bottom: 2px solid $darkgreen;
+  //   padding: 2px;
+  //   font-size: 1.5rem;
+}
 
 .skill-desc {
   width: 85%;
