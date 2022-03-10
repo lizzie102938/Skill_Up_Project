@@ -10,6 +10,12 @@
   font: $headers-font;
 }
 
+.skill-cards {
+  display: flex;
+  justify-content: space-between;
+  // flex-grow: 1;
+}
+
 .skill-card {
   height: 45vh;
   width: 15vw;
@@ -38,12 +44,6 @@
   font-weight: bolder;
 }
 
-.skillcard {
-  display: flex;
-  flex-direction: column;
-  height: 50%;
-}
-
 .skill-card p {
   padding: 0.5vh;
   font-size: 1.75vh;
@@ -58,7 +58,9 @@
 
 .skill-card-sorting {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr ;
+  flex-grow: 1;
+  height: 100%;
 }
 
 .skill-card-sorting a {
