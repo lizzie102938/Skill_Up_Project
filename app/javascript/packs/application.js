@@ -10,7 +10,6 @@ import "channels"
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initStarRating } from '../plugins/init_star_rating';
 
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
