@@ -7,7 +7,7 @@
   border-radius: 10px;
   overflow-y: auto;
   scrollbar-width: thin;
-  box-shadow: 2px 2px 10px $darker-rose;
+  box-shadow: 2px 2px 6px $darkgreen;
   padding: 1.5em;
   margin: 0 0 15px 0;
 }
@@ -52,6 +52,7 @@
 }
 
 .fa-trash,
+.fa-pen,
 .fa-comment-dots,
 .fa-edit,
 .fa-user-check,
@@ -135,7 +136,7 @@
   // height: 55vh;
   // width: 58vh;
   border-radius: 10px;
-  box-shadow: 2px 2px 10px $darkgreen;
+  box-shadow: 2px 2px 6px $darkgreen;
   position: relative;
   align-items: stretch;
   flex: 0 0 40%;
@@ -152,7 +153,7 @@
   padding: 1.5em;
   align-items: stretch;
   border-radius: 10px;
-  box-shadow: 2px 2px 10px $darkgreen;
+  box-shadow: 2px 2px 6px $darkgreen;
   position: relative;
 }
 

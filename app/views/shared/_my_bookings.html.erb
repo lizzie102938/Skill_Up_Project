@@ -1,4 +1,4 @@
-<div data-tab-content class="bookings-container fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+<div data-tab-content class="bookings-container fade" id="bookings" role="tabpanel" aria-labelledby="bookings-tab">
       <div class="bookings-titles">
         <h5></h5>
         <h5>Name</h5>
@@ -31,13 +31,13 @@
                 <!-- Button trigger modal -->
                 <% if !booking.reviews.present? %>
                   <div class="li-div-width confirmation-action">
-                    <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#writeReview">
+                    <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#writeReview<%= booking.id %>">
                       <%= ('<i class="fas fa-edit"></i>').html_safe %>
                     </button>
                   </div>
                 <% end %>
                 <!-- Modal -->
-                <div class="modal fade" id="writeReview" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="writeReview<%= booking.id %>" tabindex="-1" aria-labelledby="writeReview<%= booking.id %>Label" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -47,10 +47,10 @@
                       <div class="modal-body">
                         <%= simple_form_for [booking, @review] do |f| %>
                           <%= f.input :title %>
-                          <%= f.input :rating, collection: 1..5 %>
+                          <%= f.input :rating, collection: (1..5), label: "Rate your experience" %>
                           <%= f.input :content %>
                           <div class="modal-footer">
-                              <%= f.submit %>
+                              <%= f.submit "Send your review" %>
                           </div>
                         <% end %>
                       </div>
