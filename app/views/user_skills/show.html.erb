@@ -58,7 +58,7 @@
           <%= simple_form_for [@user_skill, @booking] do |f| %>
             <%= f.input :message, disabled: true %>
             <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, disabled: true %>
-            <%= f.input :remote, as: :boolean, disabled: true %>
+            <%= f.input :remote, as: :boolean, disabled: true, label: "Remote ?" %>
             <div class="d-grid">
               <%= f.submit class:'button-main', disabled: true %>
             </div>

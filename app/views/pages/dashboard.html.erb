@@ -1,12 +1,13 @@
 <div data-controller="dashboard">
   <ul class="nav justify-content-center nav-ul tabs" id="myTab" role="tablist">
     <li class="nav-item tab" role="presentation">
-      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Profile</button></li>
-    <li class="nav-item tab" role="presentation">
-      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Bookings</button>
+      <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">Profile</button>
     </li>
     <li class="nav-item tab" role="presentation">
-      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Requests</button>
+      <button class="nav-link" id="bookings-tab" data-bs-toggle="tab" data-bs-target="#bookings" type="button" role="tab" aria-controls="bookings" aria-selected="false">Bookings</button>
+    </li>
+    <li class="nav-item tab" role="presentation">
+      <button class="nav-link" id="requests-tab" data-bs-toggle="tab" data-bs-target="#requests" type="button" role="tab" aria-controls="requests" aria-selected="false">Incoming Requests</button>
     </li>
   </ul>
 
@@ -15,7 +16,7 @@
 
 <!-- PROFILE CONTAINER  -->
 
-    <div data-tab-content class="profile-container fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div data-tab-content class="profile-container fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="profile-img-text">
         <ul class="li-profile left-side-profile">
 
@@ -27,36 +28,41 @@
         </ul>
       </div>
       <div class="skills-i-teach">
-        <h2>Skills I can teach:</h2>
-        <ul class="each-skill">
+        <h2>My skills</h2>
+        <div class="each-skill">
           <% @user_skills.each do |user_skill| %>
-          <li class="delete-bin-li"><%= user_skill.skill.name %> <%= link_to ('<i class="fa fa-trash fa-lg delete-trash"></i>').html_safe, user_skill_path(user_skill), method: :delete %> <fr data-bs-toggle="modal" data-bs-target="#exampleModal2"> <i class="fa fa-pen fa-lg edit-skill"></i> </fr> </li>
-            <p class="skill-desc"> <%= user_skill.description%> </p>
-            <!-- MODAL FOR EDIT SKILL -->
-
-          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Edit description</h5>
-                </div>
-                <div class="modal-body">
-                  <%= simple_form_for(user_skill) do |f| %>
-                  <%= f.input :description %>
-                  <%= f.submit value:"Change description", class:"submit-button"%>
-                  <% end %>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <div class="skill">
+              <div class="title-description">
+                <h5><%= user_skill.skill.name %></h5>
+                <p class="skill-desc"> <%= user_skill.description%> </p>
+              </div>
+              <!-- MODAL FOR EDIT SKILL -->
+              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Edit description</h5>
+                    </div>
+                    <div class="modal-body">
+                      <%= simple_form_for(user_skill) do |f| %>
+                        <%= f.input :description %>
+                        <div class="modal-footer">
+                          <%= f.submit value:"Change description", class:"submit-button"%>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <div class="delete-bin-li"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, user_skill_path(user_skill), method: :delete %></div>
+              <div class="delete-bin-li" data-bs-toggle="modal" data-bs-target="#exampleModal2"> <i class="fa fa-pen fa-lg"></i></div>
             </div>
-          </div>
           <% end %>
-        </ul>
+        </div>
 
         <div class="skill-buttons">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="btn btn-primary biography-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Add Skill
           </button>
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -69,11 +75,11 @@
                   <%= simple_form_for(@new_skill) do |f| %>
                     <%= f.input :skill, collection: @skills %>
                     <%= f.input :description %>
-                    <%= f.submit class:"submit-button"%>
+                    <div class="modal-footer">
+                      <%= f.submit class:"submit-button"%>
+                      <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> %>
+                    </div>
                   <% end %>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
@@ -84,12 +90,15 @@
       </div>
 
       <div class="biography-profile">
-        <h2>Biography:</h2>
+        <h2>About me</h2>
         <p class="biography-p"><%= current_user.description %></p>
-        <button type="button" class="btn btn-primary biography-button" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+        <!-- Button trigger modal -->
+        <div class="biography-button"></div>
+        <button type="button" class="btn btn-primary biography-button" data-bs-toggle="modal" data-bs-target="#editBiography">
           Edit Bio
         </button>
-        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- Modal -->
+        <div class="modal fade" id="editBiography" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -97,7 +106,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                ...
+                <%# <%= simple_form_for(@user) do |f| %> %>
+                  <%# <%= f.input :description %> %>
+                  <%# <div class="modal-footer"> %>
+                      <%# <%= f.submit %> %>
+                  <%# </div> %>
+                <%# <% end %> %>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -106,6 +120,7 @@
             </div>
           </div>
         </div>
+        <!-- Modal END -->
       </div>
     </div>
 

@@ -5,9 +5,10 @@
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
-// @import "font-awesome-sprockets";
+
 @import "font-awesome";
 @import "flatpickr/dist/themes/light";
+@import "jquery-bar-rating/dist/themes/css-stars";
 
 // Your CSS partials
 @import "components/index";
@@ -16,6 +17,5 @@
 @import "pages/login_signup";
 @import "components/map";
 @import "components/icons";
-
 
 @import "mapbox-gl/dist/mapbox-gl";

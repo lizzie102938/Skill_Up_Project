@@ -1,5 +1,4 @@
-<div data-tab-content class="bookings-container fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <h2 class="h2-bookings">My Bookings:</h2>
+<div data-tab-content class="bookings-container fade" id="bookings" role="tabpanel" aria-labelledby="bookings-tab">
       <div class="bookings-titles">
         <h5></h5>
         <h5>Name</h5>
@@ -9,14 +8,14 @@
         <h5>Chat</h5>
         <h5>Delete</h5>
       </div>
-      <ul class="bookings-ul">
+      <div class="bookings-ul">
         <% @bookings.each do |booking| %>
-          <li class="li-bookings">
+          <div class="li-bookings">
             <div class="li-div-width"><%= cl_image_tag booking.teacher.photo.key, class:"avatar dropdown-toggle" %></div>
             <div class="li-div-width"><%= booking.teacher.username %></div>
             <div class="li-div-width"><%= booking.skill %></div>
             <div class="li-div-width"><%= booking.status %></div>
-            <div class="li-div-width"><%= booking.date %></div>
+            <div class="li-div-width"><%= booking.date.strftime("%a %e. %b at %l:%M %p") %></div>
             <% @chatroom = Chatroom.where(teacher: booking.teacher.id, student: booking.student.id).or(Chatroom.where(teacher: booking.student.id, student: booking.teacher.id)) %>
             <% if !@chatroom.present? %>
               <% @chatroom = Chatroom.create(student: current_user, teacher: booking.teacher) %>
@@ -31,9 +30,11 @@
               <% else %>
                 <!-- Button trigger modal -->
                 <% if !booking.reviews.present? %>
-                  <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#writeReview<%= booking.id %>">
-                    <%= ('<i class="fas fa-edit"></i>').html_safe %>
-                  </button>
+                  <div class="li-div-width confirmation-action">
+                    <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#writeReview<%= booking.id %>">
+                      <%= ('<i class="fas fa-edit"></i>').html_safe %>
+                    </button>
+                  </div>
                 <% end %>
                 <!-- Modal -->
                 <div class="modal fade" id="writeReview<%= booking.id %>" tabindex="-1" aria-labelledby="writeReview<%= booking.id %>Label" aria-hidden="true">
@@ -46,10 +47,10 @@
                       <div class="modal-body">
                         <%= simple_form_for [booking, @review] do |f| %>
                           <%= f.input :title %>
-                          <%= f.input :rating, collection: 1..5 %>
+                          <%= f.input :rating, collection: (1..5), label: "Rate your experience" %>
                           <%= f.input :content %>
                           <div class="modal-footer">
-                              <%= f.submit %>
+                              <%= f.submit "Send your review" %>
                           </div>
                         <% end %>
                       </div>
@@ -62,7 +63,7 @@
             <% end %>
 
 
-          </li>
+          </div>
         <% end %>
-      </ul>
+      </div>
     </div>

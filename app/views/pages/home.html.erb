@@ -31,7 +31,6 @@
               <%= image_tag 'point.png', class:'nav-point' %>
               <%= current_user.points %>
             </li>
-              <div class="navbar-right">
                 <li class="nav-item dropdown">
                 <% if current_user.photo.attached? %>
                   <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -46,7 +45,6 @@
                     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                   </div>
                 </li>
-              </div>
             <% else %>
               <div class="navbar-right">
                 <li class="navbar-item">

@@ -1,5 +1,4 @@
-<div data-tab-content class="bookings-container fade" id="contact" role="tabpanel" aria-labelledby="contact-tab" >
-      <h2 class="h2-bookings">My Requests:</h2>
+<div data-tab-content class="bookings-container fade" id="requests" role="tabpanel" aria-labelledby="requests-tab" >
       <div class="bookings-titles">
         <h5></h5>
         <h5>Name</h5>
@@ -8,14 +7,14 @@
         <h5>Date</h5>
         <h5>Delete</h5>
       </div>
-      <ul class="bookings-ul">
+      <div class="bookings-ul">
         <% @requests.each do |request| %>
-        <li class="li-bookings">
+        <div class="li-bookings">
           <div class="li-div-width"><%= cl_image_tag request.student.photo.key, class:"avatar dropdown-toggle"%></div>
           <div class="li-div-width"><%= request.student.username %></div>
           <div class="li-div-width"><%= request.skill %></div>
           <div class="li-div-width"><%= request.status %></div>
-          <div class="li-div-width"><%= request.date %></div>
+          <div class="li-div-width"><%= request.date.strftime("%a %e. %b at %l:%M %p") %></div>
           <% @chatroom = Chatroom.where(teacher: request.teacher.id, student: request.student.id).or(Chatroom.where(teacher: request.student.id, student: request.teacher.id)) %>
           <% if !@chatroom.present? %>
             <% @chatroom = Chatroom.create(student: current_user, teacher: request.teacher) %>
@@ -24,7 +23,7 @@
           <% end %>
           <% chatroom = Chatroom.where(student: current_user, teacher: request.teacher).or(Chatroom.where(teacher: current_user, student: request.student)).first %>
           <div class="li-div-width confirmation-action"><%= link_to ('<i class="fas fa-edit"></i>').html_safe, chatroom_path(@chatroom, chat: @chatroom.ids.first), class: "btn btn-cancel" %></div>
-        </li>
+        </div>
         <% end %>
-      </ul>
+      </div>
     </div>

@@ -56,7 +56,7 @@
   }
 }
 
-.dropdown-item {
+.dropdown-item.active {
   color: $darkgreen;
 }
 
@@ -79,4 +79,9 @@
 
 .navbar-right {
   width: 27vh;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
 }
