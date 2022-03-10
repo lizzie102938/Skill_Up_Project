@@ -64,8 +64,8 @@ max = User.new(
   points: 100,
   description: 'My teaching style is relaxed and fun. Happy to teach at weekends!',
   language: 'French',
-  location: 'Paris',
-  address: '75007, Paris'
+  location: 'Madrid',
+  address: '28010, Madrid'
 )
 file3 = URI.open('https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg', :read_timeout => 3000)
 max.photo.attach(io: file3, filename: 'max.jpeg', content_type: 'image/jpeg')
@@ -283,6 +283,7 @@ UserSkill.create(user: michael, skill: carpentry, description: "I'm all about DI
 UserSkill.create(user: sarah, skill: german, description: "My mother is German. At home we always speak german.")
 UserSkill.create(user: max, skill: mandarin, description: "I studied in Shanghai and fell in love with mandarin.")
 UserSkill.create(user: max, skill: coding, description: "I've worked with Ruby on Rails and PHP - happy to teach either!")
+UserSkill.create(user: max, skill: cooking, description: "I want to share my passion for Chinese cuisine")
 UserSkill.create(user: marie, skill: graphic_designer, description: "I'm very artistic in general but graphic design is my passion")
 UserSkill.create(user: enrico, skill: calligraphy, description: "My handwriting was so bad I decided to learn calligraphy on Skill-Up. Now I'm teaching myself!")
 UserSkill.create(user: chloe, skill: knitting, description: "I started knitting during covid. My specialty is hats!")
