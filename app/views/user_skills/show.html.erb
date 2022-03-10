@@ -1,31 +1,46 @@
 
 <div class="d-flex justify-content-between">
+
   <div class="teacher-profile">
 
       <div class="teacher-information">
         <%= cl_image_tag @user_skill.user.photo.key, class:'img-rectangle' %>
         <div class="teacher-description">
           <h2><%= @user_skill.user.username %></h2>
-          <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
-          <p><i class="fa-solid fa-location-dot"></i><%= @user_skill.user.location %></p>
-          <p><i class="fa-solid fa-comment-dots"></i><%= @user_skill.user.language %></p>
+          <p>City: <%= @user_skill.user.location %></p>
+          <p>Language: <%= @user_skill.user.language %></p>
           <p class="user-sill-quote">"<%= @user_skill.user.description %>"</p>
         </div>
       </div>
-      <div class="teacher-skill">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#showReview<%= @user_skill.id %>">
+        <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
+      </button>
 
-        <div class="review-box">
-          <h5>My reviews:</h5>
-            <% @reviews.each do |review| %>
-            <div class="review">
-              <p><strong><%= review.title %></strong></p>
-              <p><%= review.content %></p>
+      <!-- Modal -->
+      <div class="modal fade" id="showReview<%= @user_skill.id %>" tabindex="-1" aria-labelledby="showReview<%= @user_skill.id %>Label" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><%=  @user_skill.user.username %>'s reviews</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <% end %>
+            <div class="modal-body">
+              <% @reviews.each do |review| %>
+              <div class="review">
+                <p><strong><%= review.title %></strong></p>
+                <p><%=review.content %></p>
+              </div>
+              <% end %>
+            </div>
+          </div>s
         </div>
       </div>
+
   </div>
+
     <div class="booking-form cartoon-form">
+
       <% if user_signed_in? %>
         <%= simple_form_for [@user_skill, @booking] do |f| %>
           <h2>Send your request to <%= @user_skill.user.username %> for <%= @user_skill.skill.name %></h2>
@@ -36,7 +51,7 @@
             <%= f.submit class:'button-main' %>
           </div>
         <% end %>
-          <p class="user-skill-points">You currently have <%=current_user.points %> points.</p>
+        <p class="user-skill-points">You currently have <%=current_user.points %> points.</p>
       <% else %>
         <p class="user-skill-points">Please <%= link_to "sign in", new_user_session_path, class:"sign-in-link" %> to book a class with <%= @user_skill.user.username %> for <%= @user_skill.skill.name %>.</p>
         <div>
@@ -50,7 +65,7 @@
           <% end %>
         </div>
       <% end %>
+
     </div>
-  </div>
-  <h5 class="back"><%= link_to 'Go back', :back %></h5>
 </div>
+<h5 class="back"><%= link_to 'Go back', :back %></h5>
