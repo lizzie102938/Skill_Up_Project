@@ -46,10 +46,10 @@
                       <div class="modal-body">
                         <%= simple_form_for [booking, @review] do |f| %>
                           <%= f.input :title %>
-                          <%= f.input :rating, collection: 1..5 %>
+                          <%= f.input :rating, collection: (1..5), label: "Rate your experience" %>
                           <%= f.input :content %>
                           <div class="modal-footer">
-                              <%= f.submit %>
+                              <%= f.submit "Send your review" %>
                           </div>
                         <% end %>
                       </div>
