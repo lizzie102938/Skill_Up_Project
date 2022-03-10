@@ -40,7 +40,7 @@
       <%# requests %>
       <h2 class="my-bookings">My Bookings</h2>
       <% @requests.each do |request| %>
-        <li class="li-bookings">
+        <div class="li-bookings">
           <div class="li-div-width"><%= request.skill %></div>
           <div class="li-div-width">
             <% if request.remote %>
@@ -65,11 +65,17 @@
             </div>
             <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-user-times"></i>').html_safe, booking_path(request, status: 'Rejected'), method: :patch, class: "btn btn-cancel", data: { confirm: "Are you sure you want to accept this booking?" } %></div>
           <% end %>
-        </li>
+          <div class="li-div-width confirmation-action">
+          </div>
+        </div>
       <% end %>
+      <div class="go-back">
+        <h5 class="Go back"><%= link_to 'Go back', :back %></h5>
+      </div>
     </div>
   </div>
 
+  <%# Chatroom %>
   <div class="container chatroom"
       data-controller="chatroom-subscription"
       data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
