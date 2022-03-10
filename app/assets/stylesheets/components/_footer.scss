@@ -12,9 +12,17 @@
   font-size: 20px;
 }
 
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 5vh;
+}
+
 .footer a {
   color: $white;
-  padding: 15px;
+  padding: 1vh;
 }
 
 .footer a:hover {
