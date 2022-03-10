@@ -38,10 +38,10 @@ katie = User.new(
   location: 'Madrid',
   address: '28003, Madrid'
 )
-file1 = URI.open('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91')
+file1 = URI.open('https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg', :read_timeout => 3000)
 katie.photo.attach(io: file1, filename: 'katie.jpeg', content_type: 'image/jpeg')
 katie.save!
-
+puts katie.username
 
 janosch = User.new(
   email: 'user2@example.com',
@@ -53,7 +53,7 @@ janosch = User.new(
   location: 'Berlin',
   address: '10997, Berlin'
 )
-file2 = URI.open('https://images.unsplash.com/photo-1527082395-e939b847da0d')
+file2 = URI.open('https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg', :read_timeout => 3000)
 janosch.photo.attach(io: file2, filename: 'janosch.jpeg', content_type: 'image/jpeg')
 janosch.save!
 
@@ -67,7 +67,7 @@ max = User.new(
   location: 'Paris',
   address: '75007, Paris'
 )
-file3 = URI.open('https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg')
+file3 = URI.open('https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg', :read_timeout => 3000)
 max.photo.attach(io: file3, filename: 'max.jpeg', content_type: 'image/jpeg')
 max.save!
 
@@ -81,7 +81,7 @@ michael = User.new(
    location: 'Berlin',
    address: '10435, Berlin'
   )
-file4 = URI.open('https://images.unsplash.com/photo-1531384441138-2736e62e0919')
+file4 = URI.open('https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', :read_timeout => 3000)
 michael.photo.attach(io: file4, filename: 'michael.jpeg', content_type: 'image/jpeg')
 michael.save!
 
@@ -89,13 +89,13 @@ enrico = User.new(
    email: 'user5@example.com',
    password: 'user55',
    username: 'Enrico',
-   points: 30,
+   points: 3000,
    description: 'I am new to the city and like teaching. I am not sure what I want to learn yet, but looking forward to seeing what is on offer!',
    language: 'Spanish',
    location: 'Madrid',
    address: '28004, Madrid'
 )
-file5 = URI.open('https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg')
+file5 = URI.open('https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', :read_timeout => 3000)
 enrico.photo.attach(io: file5, filename: 'enrico.jpeg', content_type: 'image/jpeg')
 enrico.save!
 
@@ -109,7 +109,7 @@ sarah = User.new(
    location: 'Berlin',
    address: '10555, Berlin'
 )
-file6 = URI.open('https://images.unsplash.com/photo-1550546094-9835463f9f71')
+file6 = URI.open('https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', :read_timeout => 3000)
 sarah.photo.attach(io: file6, filename: 'sarah.jpeg', content_type: 'image/jpeg')
 sarah.save!
 
@@ -123,10 +123,10 @@ chloe = User.new(
   location: 'Barcelona',
   address: '08006, Barcelona'
 )
-file7 = URI.open('https://images.pexels.com/photos/1848472/pexels-photo-1848472.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file7 = URI.open('https://images.pexels.com/photos/1848472/pexels-photo-1848472.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', :read_timeout => 3000)
 chloe.photo.attach(io: file7, filename: 'chloe.jpeg', content_type: 'image/jpeg')
 chloe.save!
-
+puts chloe.username
 juliette = User.new(
    email: 'user8@example.com',
    password: 'user88',
@@ -137,7 +137,7 @@ juliette = User.new(
    location: 'Berlin',
    address: '10247, Berlin'
 )
-file8 = URI.open('https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file8 = URI.open('https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', :read_timeout => 3000)
 juliette.photo.attach(io: file8, filename: 'juliette.jpeg', content_type: 'image/jpeg')
 juliette.save!
 
@@ -151,7 +151,7 @@ paul = User.new(
   location: 'Madrid',
   address: '28015, Madrid'
 )
-file9 = URI.open('https://images.pexels.com/photos/1121796/pexels-photo-1121796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file9 = URI.open('https://images.pexels.com/photos/1121796/pexels-photo-1121796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', :read_timeout => 3000)
 paul.photo.attach(io: file9, filename: 'paul.jpeg', content_type: 'image/jpeg')
 paul.save!
 
@@ -165,7 +165,7 @@ marie = User.new(
    location: 'Paris',
    address: '75010, Paris'
 )
-file10 = URI.open('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e')
+file10 = URI.open('https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', :read_timeout => 3000)
 marie.photo.attach(io: file10, filename: 'marie.jpeg', content_type: 'image/jpeg')
 marie.save!
 
@@ -179,7 +179,7 @@ pierre = User.new(
    location: 'Berlin',
    address: '12459, Berlin'
 )
-file11 = URI.open('https://images.pexels.com/photos/1270076/pexels-photo-1270076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file11 = URI.open('https://images.pexels.com/photos/1270076/pexels-photo-1270076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', :read_timeout => 3000)
 pierre.photo.attach(io: file11, filename: 'pierre.jpeg', content_type: 'image/jpeg')
 pierre.save!
 
@@ -187,16 +187,16 @@ charlotte = User.new(
    email: 'user12@example.com',
    password: 'user1212',
    username: 'Charlotte',
-   points: 30,
+   points: 3000,
    description: 'I have just finished studying but really want to learn more about coding and UX/UI design. Happy to teach people my skills too!',
    language: 'German',
    location: 'Barcelona',
    address: '08011, Barcelona'
 )
-file12 = URI.open('https://images.unsplash.com/photo-1605406575497-015ab0d21b9b')
+file12 = URI.open('https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', :read_timeout => 3000)
 charlotte.photo.attach(io: file12, filename: 'charlotte.jpeg', content_type: 'image/jpeg')
 charlotte.save!
-
+puts charlotte.username
 francine = User.new(
   email: 'user13@example.com',
   password: 'user1313',
@@ -206,7 +206,7 @@ francine = User.new(
   language: 'English',
   location: 'New York',
   address: '10017, New York')
-file13 = URI.open('https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file13 = URI.open('https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', :read_timeout => 3000)
 francine.photo.attach(io: file13, filename: 'francine.jpeg', content_type: 'image/jpeg')
 francine.save!
 
@@ -220,7 +220,7 @@ sam = User.new(
   location: 'Madrid',
   address: '28007, Madrid'
 )
-file14 = URI.open('https://images.unsplash.com/photo-1564564321837-a57b7070ac4f')
+file14 = URI.open('https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', :read_timeout => 3000)
 sam.photo.attach(io: file14, filename: 'sam.jpeg', content_type: 'image/jpeg')
 sam.save!
 
@@ -234,7 +234,7 @@ jan = User.new(
   location: 'Hamburg',
   address: '20255, Hamburg'
 )
-file15 = URI.open('https://images.unsplash.com/photo-1583195648371-437bf29408ca')
+file15 = URI.open('https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', :read_timeout => 3000)
 jan.photo.attach(io: file15, filename: 'jan.jpeg', content_type: 'image/jpeg')
 jan.save!
 
@@ -258,7 +258,6 @@ coding = Skill.create(name: 'Coding')
 yoga = Skill.create(name: 'Yoga')
 calligraphy = Skill.create(name: 'Calligraphy')
 puts "Skills created 💃"
-
 
 puts "Creating 16 user_skills..."
 UserSkill.create(user: katie, skill: english, description: "I am a native speaker!")
