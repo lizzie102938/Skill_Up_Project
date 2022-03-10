@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
   get "dashboard", to: "pages#dashboard"
+  post "dashboard", to: "pages#dashboard"
   get "how_it_works", to: "pages#how_it_works"
 end
