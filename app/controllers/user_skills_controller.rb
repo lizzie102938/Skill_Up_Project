@@ -3,6 +3,9 @@ class UserSkillsController < ApplicationController
 
   def show
     @user_skill = UserSkill.find(params[:id])
+    @user = @user_skill.user
+    @user_skills = @user.skills.where.not(id: @user_skill.skill)
+
     authorize @user_skill
     @booking = Booking.new
     @bookings = Booking.where(user_skill: @user_skill)
