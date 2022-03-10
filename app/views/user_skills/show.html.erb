@@ -67,7 +67,7 @@
         <% end %>
         <p class="user-skill-points">You currently have <%=current_user.points %> points.</p>
       <% else %>
-        <p class="user-skill-points">Please <%= link_to "log in", new_user_session_path, class:"sign-in-link" %> to book a class.username %> for <%= @user_skill.skill.name %>.</p>
+        <p class="user-skill-points">Please <%= link_to "log in", new_user_session_path, class:"sign-in-link" %> to book a class for <%= @user_skill.skill.name %>.</p>
         <div>
           <%= simple_form_for [@user_skill, @booking] do |f| %>
             <%= f.input :message, disabled: true %>
