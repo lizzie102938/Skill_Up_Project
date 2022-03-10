@@ -25,7 +25,8 @@
   border-radius: 5px;
 }
 
-.li-bookings div {
+.li-bookings div,
+.bookings-titles div {
   margin: 1rem 1.5rem;
 }
 .bookings-ul {
@@ -79,19 +80,14 @@
 }
 
 .bookings-titles {
+  margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
-  padding-left: 2rem;
-  height: 0;
-  align-items: center;
-  text-align: center;
-  padding-top: 2.5rem;
 }
 
-.bookings-titles h5 {
-  width: 20%;
+.bookings-titles div {
   font-size: 1rem;
   font-weight: 700;
 }
@@ -359,4 +355,35 @@ li button a.active {
   padding-right: 4px;
 }
 
-// delete comment
+
+.bookings-titles .wide15,
+.li-bookings .wide15 {
+  width: 15%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookings-titles .wide30,
+.li-bookings .wide30 {
+  width: 30%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookings-titles .wide5,
+.li-bookings .wide5 {
+  width: 5%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.padding-right-5px {
+  padding-right: 5px;
+}
+

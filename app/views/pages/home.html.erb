@@ -3,6 +3,7 @@
     <div class="centre">
       <h1>SKILL-UP</h1>
       <h5><strong>Teach</strong> your skills, <strong>earn</strong> points and <strong>learn</strong> new skills for free!</h5>
+      <h5>Find out <strong><%= link_to "how it works.", how_it_works_path, class: "link-to-how" %></strong></h5>
       <div class="search-home">
         <%= form_tag skills_path, method: :get do %>
           <%= text_field_tag :skill,
