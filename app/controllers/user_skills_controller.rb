@@ -6,10 +6,9 @@ class UserSkillsController < ApplicationController
     authorize @user_skill
     @booking = Booking.new
     @bookings = Booking.where(user_skill: @user_skill)
-
-    #this is probably not correct either
-
     @reviews = @user_skill.reviews
+    # @user_id = @user_skill.user_id
+    # @user_skills = UserSkill.where(:@user_id)
 
   end
 
