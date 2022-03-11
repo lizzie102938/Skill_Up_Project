@@ -57,19 +57,19 @@ file2 = URI.open('https://images.pexels.com/photos/1222271/pexels-photo-1222271.
 janosch.photo.attach(io: file2, filename: 'janosch.jpeg', content_type: 'image/jpeg')
 janosch.save!
 
-max = User.new(
+thea = User.new(
   email: 'user3@example.com',
   password: 'user33',
-  username: 'Max',
+  username: 'Thea',
   points: 100,
   description: 'My teaching style is relaxed and fun. Happy to teach at weekends!',
-  language: 'French',
-  location: 'Madrid',
-  address: '28010, Madrid'
+  language: 'German',
+  location: 'Berlin',
+  address: '10178, Berlin'
 )
-file3 = URI.open('https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg', :read_timeout => 3000)
-max.photo.attach(io: file3, filename: 'max.jpeg', content_type: 'image/jpeg')
-max.save!
+file3 = URI.open('https://media-exp1.licdn.com/dms/image/C4D03AQHleIzfcEZ4Ag/profile-displayphoto-shrink_200_200/0/1610022937992?e=1647475200&v=beta&t=txHMAUech5BqQlFMRlYTWdu_eaiAOrbiLVD-tIf3vPs', :read_timeout => 3000)
+thea.photo.attach(io: file3, filename: 'thea.jpeg', content_type: 'image/jpeg')
+thea.save!
 
 michael = User.new(
    email: 'user4@example.com',
@@ -85,19 +85,19 @@ file4 = URI.open('https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg
 michael.photo.attach(io: file4, filename: 'michael.jpeg', content_type: 'image/jpeg')
 michael.save!
 
-enrico = User.new(
+david = User.new(
    email: 'user5@example.com',
    password: 'user55',
-   username: 'Enrico',
-   points: 30,
+   username: 'David',
+   points: 80,
    description: 'I am new to the city and like teaching. I am not sure what I want to learn yet, but looking forward to seeing what is on offer!',
    language: 'Spanish',
-   location: 'Madrid',
-   address: '28004, Madrid'
+   location: 'Berlin',
+   address: '12055, Berlin'
 )
-file5 = URI.open('https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', :read_timeout => 3000)
-enrico.photo.attach(io: file5, filename: 'enrico.jpeg', content_type: 'image/jpeg')
-enrico.save!
+file5 = URI.open('https://avatars.githubusercontent.com/u/96211793?v=4', :read_timeout => 3000)
+david.photo.attach(io: file5, filename: 'david.jpeg', content_type: 'image/jpeg')
+david.save!
 
 sarah = User.new(
    email: 'user6@example.com',
@@ -141,19 +141,19 @@ file8 = URI.open('https://images.pexels.com/photos/774909/pexels-photo-774909.jp
 juliette.photo.attach(io: file8, filename: 'juliette.jpeg', content_type: 'image/jpeg')
 juliette.save!
 
-paul = User.new(
+lizzie = User.new(
   email: 'user9@example.com',
   password: 'user99',
-  username: 'Paul',
-  points: 60,
+  username: 'Lizzie',
+  points: 80,
   description: 'This year I want to learn a new skill every month! Hoping I can find some fun people on Skill-Up to help me!',
   language: 'English',
-  location: 'Madrid',
-  address: '28015, Madrid'
+  location: 'Berlin',
+  address: '10997, Berlin'
 )
-file9 = URI.open('https://images.pexels.com/photos/1121796/pexels-photo-1121796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', :read_timeout => 3000)
-paul.photo.attach(io: file9, filename: 'paul.jpeg', content_type: 'image/jpeg')
-paul.save!
+file9 = URI.open('https://s3.amazonaws.com/shecodesio-production/students/avatars/000/018/374/medium/FB_IMG_1605560110067.jpg?1608485726', :read_timeout => 3000)
+lizzie.photo.attach(io: file9, filename: 'lizzie.jpeg', content_type: 'image/jpeg')
+lizzie.save!
 
 marie = User.new(
    email: 'user10@example.com',
@@ -169,19 +169,19 @@ file10 = URI.open('https://images.pexels.com/photos/1239288/pexels-photo-1239288
 marie.photo.attach(io: file10, filename: 'marie.jpeg', content_type: 'image/jpeg')
 marie.save!
 
-pierre = User.new(
+aleksander = User.new(
    email: 'user11@example.com',
    password: 'user1111',
-   username: 'Pierre',
-   points: 50,
+   username: 'Aleksander',
+   points: 70,
    description: 'I love meeting new people and learning new things. Really excited to start teaching others!',
    language: 'French',
    location: 'Berlin',
    address: '12459, Berlin'
 )
-file11 = URI.open('https://images.pexels.com/photos/1270076/pexels-photo-1270076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', :read_timeout => 3000)
-pierre.photo.attach(io: file11, filename: 'pierre.jpeg', content_type: 'image/jpeg')
-pierre.save!
+file11 = URI.open('https://scontent-dus1-1.xx.fbcdn.net/v/t1.6435-9/73093519_2861007387267285_2729522626518056960_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=84a396&_nc_ohc=dAulxClNJVgAX8IIXM0&_nc_ht=scontent-dus1-1.xx&oh=00_AT-sSxpuG4KN6R1mpa_1Wp6zXqb-_xtSRXcPvrgvvo5IzA&oe=624EFDFE', :read_timeout => 3000)
+aleksander.photo.attach(io: file11, filename: 'aleksander.jpeg', content_type: 'image/jpeg')
+aleksander.save!
 
 charlotte = User.new(
    email: 'user12@example.com',
@@ -265,35 +265,34 @@ UserSkill.create(user: katie, skill: cooking, description: "I love cooking all t
 UserSkill.create(user: katie, skill: coding, description: "I learned coding Le Wagon. I specialise on Ruby.")
 UserSkill.create(user: janosch, skill: guitar, description: "I taught myself how to play the guitar and joined a band 2 years ago.")
 UserSkill.create(user: janosch, skill: coding, description: "I am a qualified UX/UI designer but also a self-taught coder of Golang and Python")
-UserSkill.create(user: max, skill: knitting, description: "I learned knitting from my Grandma!")
+UserSkill.create(user: thea, skill: knitting, description: "I learned knitting from my Grandma!")
 UserSkill.create(user: michael, skill: mandarin, description: "I grew up in China - so I'm fluent in mandarin.")
 UserSkill.create(user: michael, skill: tennis, description: "I played for my college team.")
-UserSkill.create(user: enrico, skill: cooking, description: "I love all kinds of spanish food - especially a traditional paella!")
-UserSkill.create(user: enrico, skill: coding, description: "I love Ruby on Rails, but can also help with Javascript")
+UserSkill.create(user: david, skill: cooking, description: "I love all kinds of spanish food - especially a traditional paella!")
+UserSkill.create(user: aleksander, skill: coding, description: "I love Ruby on Rails, but can also help with Javascript")
 UserSkill.create(user: sarah, skill: english, description: "I'm half english/half german - grew up in London.")
 UserSkill.create(user: sarah, skill: music_production, description: "I love music and have been producing music for 4 years now")
 UserSkill.create(user: sarah, skill: cooking, description: "I love sushi. I leaned rolling sushi during my year abroad in Hongkong")
 UserSkill.create(user: chloe, skill: gardening, description: "I have a little garden myself and would love to show you how to take care of your flowers!")
 UserSkill.create(user: juliette, skill: fitness, description: "Obsessed with aerobics!")
 UserSkill.create(user: chloe, skill: coding, description: "I'm a senior full-stack developer for Google with 8 years experience")
-UserSkill.create(user: paul, skill: yoga, description: "I became a yoga teacher 3 years ago.")
-UserSkill.create(user: paul, skill: coding, description: "I have been working with Python for 5 years")
+UserSkill.create(user: lizzie, skill: djing, description: "Let's dance!")
+UserSkill.create(user: lizzie, skill: coding, description: "Just finished at Le Wagon. I'll help you with some Ruby!")
 UserSkill.create(user: janosch, skill: calligraphy, description: "I write the most beautiful love letters.")
 UserSkill.create(user: michael, skill: carpentry, description: "I'm all about DIY! I'll teach you how to fix your furniture")
 UserSkill.create(user: sarah, skill: german, description: "My mother is German. At home we always speak german.")
-UserSkill.create(user: max, skill: mandarin, description: "I studied in Shanghai and fell in love with mandarin.")
-UserSkill.create(user: max, skill: coding, description: "I've worked with Ruby on Rails and PHP - happy to teach either!")
-UserSkill.create(user: max, skill: cooking, description: "I want to share my passion for Chinese cuisine")
+UserSkill.create(user: thea, skill: mandarin, description: "I studied in Shanghai and fell in love with mandarin.")
+UserSkill.create(user: thea, skill: coding, description: "I've worked with Ruby on Rails and PHP - happy to teach either!")
+UserSkill.create(user: thea, skill: cooking, description: "I want to share my passion for Chinese cuisine")
 UserSkill.create(user: marie, skill: graphic_designer, description: "I'm very artistic in general but graphic design is my passion")
-UserSkill.create(user: enrico, skill: calligraphy, description: "My handwriting was so bad I decided to learn calligraphy on Skill-Up. Now I'm teaching myself!")
+UserSkill.create(user: aleksander, skill: calligraphy, description: "My handwriting was so bad I decided to learn calligraphy on Skill-Up. Now I'm teaching myself!")
 UserSkill.create(user: chloe, skill: knitting, description: "I started knitting during covid. My specialty is hats!")
 UserSkill.create(user: juliette, skill: tennis, description: "I have been playing tennis since I was 4.")
-UserSkill.create(user: paul, skill: english, description: "Native speaker!")
-UserSkill.create(user: paul, skill: fitness, description: "Obsessed with hitting the gym. I'm a personal trainer.")
+UserSkill.create(user: lizzie, skill: gardening, description: "I can give you tips to grow fruit and veg!")
 UserSkill.create(user: michael, skill: gardening, description: "I grew up in the country and know all about gardening")
 UserSkill.create(user: janosch, skill: djing, description: "I'v been DJing at weddings etc for the last 10 years")
 UserSkill.create(user: marie, skill: djing, description: "I love music. I'm working in one of the most popular clubs in Paris.")
-UserSkill.create(user: pierre, skill: tennis, description: "I have been teaching tennis for 5 years!" )
+UserSkill.create(user: david, skill: knitting, description: "My favourite thing to knit is socks!" )
 UserSkill.create(user: charlotte, skill: german, description: "I am a native speaker so can help with anything" )
 UserSkill.create(user: charlotte, skill: calligraphy, description: "I have been practising calligraphy for 10 years and can help you write nice invitations etc" )
 UserSkill.create(user: francine, skill: djing, description: "I love house, techno and disco!" )
