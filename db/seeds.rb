@@ -35,8 +35,8 @@ katie = User.new(
   points: 90,
   description: 'I have been using Skill-Up for 2 years teaching English and coding with Ruby on Rails. I can teach remote or in person :)',
   language: 'English',
-  location: 'Madrid',
-  address: '28003, Madrid'
+  location: 'Berlin',
+  address: '10555, Berlin'
 )
 file1 = URI.open('https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg', :read_timeout => 3000)
 katie.photo.attach(io: file1, filename: 'katie.jpeg', content_type: 'image/jpeg')
@@ -65,7 +65,7 @@ thea = User.new(
   description: 'My teaching style is relaxed and fun. Happy to teach at weekends!',
   language: 'German',
   location: 'Berlin',
-  address: '10178, Berlin'
+  address: 'Panoramastraße 1A, 10178 Berlin'
 )
 file3 = URI.open('https://media-exp1.licdn.com/dms/image/C4D03AQHleIzfcEZ4Ag/profile-displayphoto-shrink_200_200/0/1610022937992?e=1647475200&v=beta&t=txHMAUech5BqQlFMRlYTWdu_eaiAOrbiLVD-tIf3vPs', :read_timeout => 3000)
 thea.photo.attach(io: file3, filename: 'thea.jpeg', content_type: 'image/jpeg')
@@ -91,9 +91,9 @@ david = User.new(
    username: 'David',
    points: 80,
    description: 'I am new to the city and like teaching. I am not sure what I want to learn yet, but looking forward to seeing what is on offer!',
-   language: 'Spanish',
+   language: 'French',
    location: 'Berlin',
-   address: '12055, Berlin'
+   address: 'Brückenstraße 1, 10179 Berlin'
 )
 file5 = URI.open('https://avatars.githubusercontent.com/u/96211793?v=4', :read_timeout => 3000)
 david.photo.attach(io: file5, filename: 'david.jpeg', content_type: 'image/jpeg')
@@ -106,8 +106,8 @@ sarah = User.new(
    points: 50,
    description: 'I am outgoing and always love talking to people from all over the World! ',
    language: 'English',
-   location: 'Berlin',
-   address: '10555, Berlin'
+   location: 'Madrid',
+   address: '28006, Madrid'
 )
 file6 = URI.open('https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', :read_timeout => 3000)
 sarah.photo.attach(io: file6, filename: 'sarah.jpeg', content_type: 'image/jpeg')
@@ -175,7 +175,7 @@ aleksander = User.new(
    username: 'Aleksander',
    points: 70,
    description: 'I love meeting new people and learning new things. Really excited to start teaching others!',
-   language: 'French',
+   language: 'English',
    location: 'Berlin',
    address: '12459, Berlin'
 )
@@ -217,8 +217,8 @@ sam = User.new(
   points: 30,
   description: 'My name is Sam and I am from California. New to Madrid but not new to teaching!',
   language: 'English',
-  location: 'Madrid',
-  address: '28007, Madrid'
+  location: 'Berlin',
+  address: 'Rudi-Dutschke-Straße 26, 10969 Berlin'
 )
 file14 = URI.open('https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', :read_timeout => 3000)
 sam.photo.attach(io: file14, filename: 'sam.jpeg', content_type: 'image/jpeg')
