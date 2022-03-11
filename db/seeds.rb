@@ -90,7 +90,7 @@ david = User.new(
    password: 'user55',
    username: 'David',
    points: 80,
-   description: 'I am new to the city and like teaching. I am not sure what I want to learn yet, but looking forward to seeing what is on offer!',
+   description: 'I am in Berlin since 5 years and like teaching and KitKat. I am not sure what I want to learn yet, but I am really open!',
    language: 'French',
    location: 'Berlin',
    address: 'Brückenstraße 1, 10179 Berlin'
