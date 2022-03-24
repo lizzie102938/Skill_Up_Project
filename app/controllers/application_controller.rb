@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   after_action :store_action
   # before_action :store_user_location!, if: :storable_location?
-  include Pundit
+  include Pundit::Authorization
 
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
