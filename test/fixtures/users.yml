@@ -1,0 +1,9 @@
+katie:
+  email: 'user1@example.com'
+  password: 'user11'
+  username: 'Katie'
+  points: 90
+  description: 'I have been using Skill-Up for 2 years teaching English and coding with Ruby on Rails. I can teach remote or in person :)'
+  language: 'English'
+  location: 'Berlin'
+  address: '10555, Berlin'
