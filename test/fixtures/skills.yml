@@ -1,3 +1,11 @@
-cooking:
+knitting:
   id: 1
+  name: 'knitting'
+
+gardening:
+  id: 2
+  name: 'gardening'
+
+cooking:
+  id: 13
   name: 'cooking'
