@@ -2,7 +2,7 @@ require "test_helper"
 
 class SkillsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @skill = skills(:one)
+    @skill = skills(:cooking)
   end
 
   test "should get index" do
@@ -11,7 +11,6 @@ class SkillsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show skill" do
-    # skill = skills(:one)
     get skill_url(@skill)
     assert_response :success
   end

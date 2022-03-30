@@ -1,4 +1,5 @@
-jan_gardening:
-  id: gardening
-  user: jan
-  description: 'I have been growing my own vegetables since I was a kid. I also know the best way to keep pests away!'
+katie_cooking:
+  id: 1
+  skill: cooking
+  user: katie
+  description: "I love cooking all types of cuisine!"

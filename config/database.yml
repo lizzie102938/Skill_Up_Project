@@ -57,7 +57,14 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Skill_Up_Project_test
+  database:
+# test:
+#   adapter: postgresql
+#   encoding: unicode
+#     database: myapp_test
+#   pool: 5
+#   username: myapp_superuser
+#   password: SU_posgresql_david
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
