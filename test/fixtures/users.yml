@@ -8,3 +8,14 @@ katie:
   language: 'English'
   location: 'Berlin'
   address: '10555, Berlin'
+
+janosch:
+  id: 2
+  email: 'user2@example.com'
+  encrypted_password: 'user22'
+  username: 'Janosch'
+  points: 50
+  description: 'I live in Berlin and love meeting new people through shared passions'
+  language: 'German'
+  location: 'Berlin'
+  address: '10997, Berlin'
