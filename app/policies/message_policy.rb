@@ -8,7 +8,7 @@ class MessagePolicy < ApplicationPolicy
 
   def show?
     true
-    # record.user == user
+    # record.student == user || record.teacher == user
   end
 
   def new?
@@ -16,7 +16,6 @@ class MessagePolicy < ApplicationPolicy
   end
 
   def create?
-    true
-    # record.user == user
+    record.user == user
   end
 end
