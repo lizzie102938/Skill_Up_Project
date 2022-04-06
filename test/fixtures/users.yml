@@ -1,0 +1,21 @@
+katie:
+  id: 1
+  email: 'user1@example.com'
+  encrypted_password: 'user11'
+  username: 'Katie'
+  points: 90
+  description: 'I have been using Skill-Up for 2 years teaching English and coding with Ruby on Rails. I can teach remote or in person :)'
+  language: 'English'
+  location: 'Berlin'
+  address: '10555, Berlin'
+
+janosch:
+  id: 2
+  email: 'user2@example.com'
+  encrypted_password: 'user22'
+  username: 'Janosch'
+  points: 50
+  description: 'I live in Berlin and love meeting new people through shared passions'
+  language: 'German'
+  location: 'Berlin'
+  address: '10997, Berlin'
