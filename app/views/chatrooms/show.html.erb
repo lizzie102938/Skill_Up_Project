@@ -11,13 +11,14 @@
           <div class="li-div-width"><%= booking.skill %></div>
           <div class="li-div width">
             <% if booking.remote %>
-              <i class="far fa-check-square"></i>
+              <i class="fas fa-video"></i>
             <% else %>
-              <i class="far fa-square"></i>
+              <i class="fas fa-video-slash"></i>
             <% end %>
           </div>
           <div class="li-div-width"><%= booking.status %></div>
           <% if current_user == booking.student %>
+            <div class="li-div-width"><%= booking.date.strftime("%a %e. %b at %l:%M %p") %></div>
             <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(booking), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
           <% else %>
             <div class="li-div-width">
@@ -27,8 +28,10 @@
                 <%= button_tag type: 'submit', class: "btn btn-cancel" do %>
                   <i class="fa fa-user-check" ></i>
                 <% end %>
+              <div class="li-div-width confirmation-action">
+                <%= link_to ('<i class="fa fa-user-times"></i>').html_safe, booking_path(booking, status: 'Rejected'), method: :patch, class: "btn btn-cancel", data: { confirm: "Are you sure you want to accept this booking?" } %>
+              </div>
               <% end %>
-              <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-user-times"></i>').html_safe, booking_path(booking, status: 'Rejected'), method: :patch, class: "btn btn-cancel", data: { confirm: "Are you sure you want to accept this booking?" } %></div>
             </div>
           <% end %>
         </div>
@@ -45,14 +48,14 @@
           <div class="li-div-width"><%= request.skill %></div>
           <div class="li-div-width">
             <% if request.remote %>
-              <i class="far fa-check-square"></i>
+              <i class="fas fa-video"></i>
             <% else %>
-              <i class="far fa-square"></i>
+              <i class="fas fa-video-slash"></i>
             <% end %>
           </div>
           <div class="li-div-width"><%= request.status %></div>
-          <div class="li-div-width"><%= request.date.strftime("%a %e. %b at %l:%M %p") %></div>
           <% if current_user == request.student %>
+            <div class="li-div-width"><%= request.date.strftime("%a %e. %b at %l:%M %p") %></div>
             <div class="li-div-width confirmation-action"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(request), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
           <% else %>
             <div class="li-div-width">
