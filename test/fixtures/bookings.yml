@@ -1,0 +1,22 @@
+# fake bookings here
+
+booking1:
+  date: 2020,3,4,5,6,7
+  skill: "cooking"
+  message: "let's book a lesson"
+  status: "pending"
+
+# create_table "bookings", force: :cascade do |t|
+#     t.datetime "date"
+#     t.boolean "remote"
+#     t.string "skill"
+#     t.text "message"
+#     t.string "status"
+#     t.bigint "student_id"
+#     t.bigint "teacher_id"
+#     t.datetime "created_at", precision: 6, null: false
+#     t.datetime "updated_at", precision: 6, null: false
+#     t.bigint "user_skill_id"
+#     t.index ["student_id"], name: "index_bookings_on_student_id"
+#     t.index ["teacher_id"], name: "index_bookings_on_teacher_id"
+#     t.index ["user_skill_id"], name: "index_bookings_on_user_skill_id"
