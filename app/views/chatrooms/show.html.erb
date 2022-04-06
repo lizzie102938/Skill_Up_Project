@@ -1,15 +1,11 @@
 <div class="d-flex justify-content-between">
   <div class="bookings">
     <div class="bookings-ul">
-      <h2>My incoming Requests</h2>
-      <%# <div class="li-bookings">
-        <p>Skill</p>
-        <p>Remote ?</p>
-        <p>Status</p>
-        <p>Date</p>
-        <p>Accept</p>
-        <p>Reject</p>
-      </div> %>
+      <% if @chatroom.student == current_user %>
+        <h2 class="my-bookings">My Bookings</h2>
+      <% elsif @chatroom.teacher == current_user %>
+        <h2>My incoming Requests</h2>
+      <% end %>
       <% @bookings.each do |booking| %>
         <div class="li-bookings">
           <div class="li-div-width"><%= booking.skill %></div>
@@ -37,8 +33,13 @@
           <% end %>
         </div>
       <% end %>
+
       <%# requests %>
-      <h2 class="my-bookings">My Bookings</h2>
+      <% if @chatroom.teacher == current_user %>
+        <h2 class="my-bookings">My Bookings</h2>
+      <% elsif @chatroom.student == current_user %>
+        <h2>My incoming Requests</h2>
+      <% end %>
       <% @requests.each do |request| %>
         <div class="li-bookings">
           <div class="li-div-width"><%= request.skill %></div>
