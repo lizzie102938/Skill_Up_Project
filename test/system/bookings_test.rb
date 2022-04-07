@@ -9,5 +9,8 @@ class BookingsTest < ApplicationSystemTestCase
     login_as(user, :scope => :user)
     visit dashboard_url
     assert_selector "button", text: "Bookings"
+    # assert_selector "nav-link active bookings tab", count: Booking.count
   end
+
+
 end
