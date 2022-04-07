@@ -7,5 +7,4 @@ class ChatroomsController < ApplicationController
     @bookings = Booking.where(student: @chatroom.student, teacher: @chatroom.teacher)
     @requests = Booking.where(teacher: @chatroom.student, student: @chatroom.teacher)
   end
-
 end
