@@ -15,5 +15,6 @@ class UsersTest < ApplicationSystemTestCase
     fill_in "Biography", with: "I am new to Berlin and looking to learn new things"
     click_on "Sign up"
     assert_equal root_url, page.current_url
+    save_and_open_screenshot
   end
 end
