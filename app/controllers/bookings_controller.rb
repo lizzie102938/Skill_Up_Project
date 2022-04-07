@@ -21,8 +21,6 @@ class BookingsController < ApplicationController
       if @booking.student.points >= 10
         @booking.student.points -= 10
         @booking.student.save
-        # @booking.teacher.points += 10
-        # @booking.teacher.save
         @chatroom = Chatroom.where(teacher: @booking.teacher.id, student: @booking.student.id).or(Chatroom.where(teacher: @booking.student.id, student: @booking.teacher.id))
         if !@chatroom.present?
           @chatroom = Chatroom.create(student: current_user, teacher: @booking.teacher)
@@ -40,13 +38,13 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id]).destroy
+    @chatroom = Chatroom.where(teacher: @booking.teacher.id, student: @booking.student.id).or(Chatroom.where(teacher: @booking.student.id, student: @booking.teacher.id))
     authorize @booking
     @booking.student.points += 10
     @booking.student.save
     @booking.teacher.points -= 10
     @booking.teacher.save
-
-    redirect_to dashboard_path :notice => "Your booking has been deleted"
+    redirect_to chatroom_path(@chatroom, chat: @chatroom.ids.first), :alert => "Your booking has been deleted"
   end
 
   def edit
@@ -55,15 +53,38 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.status = params[:status]
+    @chatroom = Chatroom.where(teacher: @booking.teacher.id, student: @booking.student.id).or(Chatroom.where(teacher: @booking.student.id, student: @booking.teacher.id))
     if params[:status] == 'Accepted'
       @booking.date = params[:booking][:date]
-      @booking.teacher.points += 10
+      if @booking.status == 'Rejected'
+        @booking.teacher.points += 10
+        @booking.student.points -= 10
+      elsif @booking.status == 'Accepted'
+        @booking.teacher.points -= 0
+        @booking.student.points += 0
+      elsif @booking.status == 'Pending'
+        @booking.teacher.points += 10
+      end
+      @booking.student.save
       @booking.teacher.save
     end
+    if params[:status] == 'Rejected'
+      if @booking.status == 'Rejected'
+        @booking.teacher.points += 0
+        @booking.student.points += 0
+      elsif @booking.status == 'Accepted'
+        @booking.teacher.points -= 10
+        @booking.student.points += 10
+      elsif @booking.status == 'Pending'
+        @booking.student.points += 10
+      end
+      @booking.student.save
+      @booking.teacher.save
+    end
+    @booking.status = params[:status]
     authorize @booking
     if @booking.save
-      redirect_to dashboard_path
+      redirect_to chatroom_path(@chatroom, chat: @chatroom.ids.first)
     else
       # render 'user_skills/show'
     end
