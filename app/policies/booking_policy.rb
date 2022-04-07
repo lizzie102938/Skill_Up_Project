@@ -15,7 +15,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    record.student == user
   end
 
   def edit?
@@ -23,10 +23,10 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    record.student == user || record.teacher == user
+    record.teacher == user
   end
 
   def destroy?
-    record.student == user || record.teacher == user
+    record.student == user
   end
 end
