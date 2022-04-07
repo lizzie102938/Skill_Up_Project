@@ -40,12 +40,14 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     authorize @booking
-    @booking.student.points += 10
-    @booking.student.save
     if @booking.status == 'Accepted'
+      @booking.student.points += 10
       @booking.teacher.points -= 10
-      @booking.teacher.save
+    elsif @booking.status == 'Pending'
+      @booking.student.points += 10
     end
+    @booking.student.save
+    @booking.teacher.save
     redirect_to chatroom_path(@chatroom, chat: @chatroom.ids.first), :alert => "Your booking has been deleted"
   end
 
