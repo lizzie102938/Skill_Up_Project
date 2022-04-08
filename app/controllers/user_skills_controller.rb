@@ -27,10 +27,11 @@ class UserSkillsController < ApplicationController
     @user_skill.user = current_user
     @user_skill.description = params[:user_skill][:description]
     authorize @user_skill
-    if @user_skill.save!
+    if @user_skill.save
       redirect_to dashboard_path
     else
-      render
+      flash[:alert] = "New skill not saved. 100 characters maximum allowed."
+      redirect_to dashboard_path
     end
   end
 
