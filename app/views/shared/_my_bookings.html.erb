@@ -26,7 +26,13 @@
             <div class="li-div-width confirmation-action wide5"><%= link_to ('<i class="fas fa-comment-dots"></i>').html_safe, chatroom_path(@chatroom, chat: @chatroom.ids.first), class: "btn btn-cancel" %></div>
             <% if booking.date.present? %>
               <% if Date.today < booking.date %>
-                <div class="li-div-width confirmation-action wide5"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(booking), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this booking?" } %></div>
+                <div class="li-div-width confirmation-action wide5">
+                  <%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe, booking_path(booking),
+                              method: :delete,
+                              class: "btn btn-cancel",
+                              data: { confirm: "Are you sure you want to delete this booking?" }
+                  %>
+                </div>
               <% else %>
                 <!-- Button trigger modal -->
                 <% if !booking.reviews.present? %>
