@@ -10,7 +10,11 @@
           <h2><%= @user_skill.user.username %></h2>
               <!-- Button trigger modal -->
           <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#showReview<%= @user_skill.id %>" id="rating-button">
-            <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+            <% if @reviews.count <= 1 %>
+              <p><%= @reviews.count  %> review</p>
+            <% else %>
+              <p><%= @reviews.count  %> reviews</p>
+            <% end %>
           </button>
           <p><i class="fa-solid fa-location-dot"></i><%= @user_skill.user.location %></p>
           <p><i class="fa-solid fa-comment"></i><%= @user_skill.user.language %></p>
