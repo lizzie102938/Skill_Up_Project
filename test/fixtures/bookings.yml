@@ -1,0 +1,17 @@
+# fake bookings here
+
+booking1:
+  date: 2012-08-17T20:16:37
+  skill: "cooking"
+  message: "let's book a lesson"
+  status: "pending"
+  student_id: 2
+  teacher_id: 1
+
+booking2:
+  date: 2012-08-17T20:16:37
+  skill: "german"
+  message: "let's learn"
+  status: "pending"
+  student_id: 1
+  teacher_id: 2

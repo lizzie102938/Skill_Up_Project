@@ -1,3 +1,13 @@
+module SignInHelper
+  def sign_in_as(user)
+    post sign_in_url(email: user.email, encrypted_password: user.encrypted_password)
+  end
+end
+
+class ActionDispatch::IntegrationTest
+  include SignInHelper
+end
+
 ENV['RAILS_ENV'] ||= 'test'
 require_relative "../config/environment"
 require "rails/test_help"

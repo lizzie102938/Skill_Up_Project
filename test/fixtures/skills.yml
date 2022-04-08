@@ -9,3 +9,55 @@ gardening:
 cooking:
   id: 13
   name: 'cooking'
+
+coding:
+  id: 14
+  name: 'coding'
+
+english:
+  id: 15
+  name: 'english'
+
+german:
+  id: 16
+  name: 'german'
+
+djing:
+  id: 3
+  name: 'djing'
+
+music_production:
+  id: 4
+  name: 'music production'
+
+mandarin:
+  id: 5
+  name: 'mandarin'
+
+carpentry:
+  id: 6
+  name: 'carpentry'
+
+fitness:
+  id: 7
+  name: 'fitness'
+
+guitar:
+  id: 8
+  name: 'guitar'
+
+graphic_design:
+  id: 9
+  name: 'graphic design'
+
+yoga:
+  id: 10
+  name: 'yoga'
+
+calligraphy:
+  id: 11
+  name: 'calligraphy'
+
+tennis:
+  id: 12
+  name: 'tennis'
