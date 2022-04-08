@@ -28,7 +28,6 @@ h2 {
   padding: 0 5vh;
 }
 
-
 .img-rectangle {
   align-self: center;
   width: 300px;
@@ -36,6 +35,12 @@ h2 {
   background-size: cover;
   border-radius: 5px;
   margin-bottom: 15px;
+}
+
+#rating-button {
+  &:hover {
+  color: $darker-rose;
+  }
 }
 
 .teacher-skill {
@@ -103,12 +108,13 @@ h2 {
 .review-box {
   width: 100%;
 }
+
 .review {
   display: flex;
   flex-direction: column;
 }
 
-.review p{
+.review p {
   margin: 0;
 }
 
