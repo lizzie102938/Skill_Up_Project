@@ -25,10 +25,12 @@ class BookingsController < ApplicationController
         @chatroom = Chatroom.where(teacher: @booking.teacher.id, student: @booking.student.id).or(Chatroom.where(teacher: @booking.student.id, student: @booking.teacher.id))
         if !@chatroom.present?
           @chatroom = Chatroom.create(student: current_user, teacher: @booking.teacher)
+          redirect_to chatroom_path(@chatroom, chat: @chatroom.id), alert: "Your booking request has been sent"
         else
           @chatroom
+          redirect_to chatroom_path(@chatroom, chat: @chatroom.ids.first), alert: "Your booking request has been sent"
         end
-        redirect_to chatroom_path(@chatroom, chat: @chatroom.ids.first), alert: "Your booking request has been sent"
+
       else
         { alert: "You don't have enough coin" }
       end
