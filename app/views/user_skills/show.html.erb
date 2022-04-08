@@ -11,13 +11,14 @@
               <!-- Button trigger modal -->
           <button type="button" class="btn btn-cancel" data-bs-toggle="modal" data-bs-target="#showReview<%= @user_skill.id %>" id="rating-button">
             <% if @reviews.count <= 1 %>
-              <p><%= @reviews.count  %> review</p>
+              <p><i class="fas fa-comment-dots"></i>  <%= @reviews.count %>reviews</p>
             <% else %>
-              <p><%= @reviews.count  %> reviews</p>
+              <p><i class="fas fa-comment-dots"></i>  <%= @reviews.count %> reviews</p>
             <% end %>
           </button>
-          <p><i class="fa-solid fa-location-dot"></i><%= @user_skill.user.location %></p>
-          <p><i class="fa-solid fa-comment"></i><%= @user_skill.user.language %></p>
+          <p><i class="fas fa-star"></i>  <%= @average_rating %>/5</p>
+          <p><i class="fa-solid fa-location-dot"></i>  <%= @user_skill.user.location %></p>
+          <p><i class="fa-solid fa-comment"></i>  <%= @user_skill.user.language %></p>
           <p class="user-sill-quote">"<%= @user_skill.user.description %>"</p>
         </div>
       </div>
@@ -46,7 +47,21 @@
             <div class="modal-body">
               <% @reviews.each do |review| %>
               <div class="review">
-                <p><strong><%= review.title %></strong></p>
+                <div class='review-title'>
+                  <p><strong><%= review.title %></strong></p>
+                  <% case review.rating %>
+                    <% when 1 %>
+                      <p><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
+                    <% when 2 %>
+                      <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
+                    <% when 3 %>
+                      <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
+                    <% when 4 %>
+                      <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></p>
+                    <% when 5 %>
+                      <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                  <% end %>
+                </div>
                 <p><%=review.content %></p>
               </div>
               <% end %>

@@ -112,6 +112,11 @@ h2 {
   margin: 0;
 }
 
+.review-title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .user-sill-quote {
   font-style: italic;
 }

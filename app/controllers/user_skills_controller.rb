@@ -10,6 +10,11 @@ class UserSkillsController < ApplicationController
     @booking = Booking.new
     @bookings = Booking.where(user_skill: @user_skill)
     @reviews = @user_skill.reviews
+    sum = 0
+    @reviews.each do |review|
+      sum += review.rating
+    end
+    @average_rating = sum.fdiv(@reviews.count).floor(1)
     # @user_id = @user_skill.user_id
     # @user_skills = UserSkill.where(:@user_id)
 
