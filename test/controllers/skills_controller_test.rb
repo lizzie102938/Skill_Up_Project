@@ -12,9 +12,9 @@ class SkillsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should show skill" do
-    get skill_url(@skill)
-    assert_equal 'cooking', @skill.name
-    assert_response :success
-  end
+  # test "should show skill" do
+  #   get skill_url(@skill)
+  #   assert_equal 'cooking', @skill.name
+  #   assert_response :success
+  # end
 end
