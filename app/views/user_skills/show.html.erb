@@ -1,7 +1,7 @@
 
 <div class="d-flex justify-content-between">
 
-  <div class="teacher-profile">
+  <div class="teacher-profile cartoon-container">
 
       <div class="teacher-information">
         <%= cl_image_tag @user_skill.user.photo.key, class:'img-rectangle' %>
@@ -72,7 +72,7 @@
 
   </div>
 
-    <div class="booking-form cartoon-form">
+    <div class="booking-form">
 
       <% if user_signed_in? %>
         <%= simple_form_for [@user_skill, @booking] do |f| %>

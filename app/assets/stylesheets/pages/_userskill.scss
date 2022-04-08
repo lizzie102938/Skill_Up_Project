@@ -69,16 +69,15 @@ h2 {
   box-shadow: 2px 2px 6px $darkgreen;
 }
 
-.booking-form::after {
-  content: "";
-  background-image: asset-url("Cool_Kids_Bust");
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-position: right;
+.cartoon-container {
+  z-index: 1;
+  background-image: asset-url("lady-35.png");
   height: 100%;
   width: 100%;
-  opacity: 0.2;
-}
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: right 25px bottom 20px;
+  }
 
 .user-skill-points {
   margin: 2.5vh 0;
