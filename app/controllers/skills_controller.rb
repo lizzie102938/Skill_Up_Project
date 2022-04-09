@@ -18,7 +18,7 @@ class SkillsController < ApplicationController
   def show
     @skill = Skill.find(params[:id])
     authorize @skill
-    @users = policy_scope(User).joins(:user_skills).where(user_skills: { skill: @skill })
+    @users = policy_scope(User).joins(:user_skills).where(user_skills: { skill: @skill })#.where(user_skills: { user: current_user})
     if params[:city].present?
       @users = @users.where(location: params[:city].capitalize)
     end
