@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_booking, except: [ :create, :detroy ]
+  before_action :set_booking, except: [ :create, :destroy ]
   before_action :set_chatroom, except: [ :show, :create, :edit ]
 
   def show
