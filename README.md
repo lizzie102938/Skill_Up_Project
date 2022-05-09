@@ -5,6 +5,8 @@
 This application was built for our final project at the Le Wagon bootcamp in Berlin, March 2022. With this application we used Ruby on Rails, Javascript, Stimulus, PostreSQL, CSS, HTML, SASS and deployed it to Heroku. 💻 Take a look! http://www.skill-up.xyz/ (for access to all features, please use log in:
 user1@example.com, password: user11).
 
+![app screenshot](SkillUp.png)
+
 <h4>🤝 The Team</h4>
 • <a href="https://www.github.com/lizzie102938" target="_blank">Lizzie Lerwill</a>
 • <a href="https://www.github.com/DavidML89" target="_blank">David Morio Lesavourey</a>
