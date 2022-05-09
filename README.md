@@ -3,7 +3,9 @@
 <h2 align="center">Teach your skills, earn points and learn new skills for free</h2>
 
 This application was built for our final project at the Le Wagon bootcamp in Berlin, March 2022. With this application we used Ruby on Rails, Javascript, Stimulus, PostreSQL, CSS, HTML, SASS and deployed it to Heroku. 💻 Take a look! http://www.skill-up.xyz/ (for access to all features, please use log in:
-user1@example.com, password: user11).
+user1@example.com, password: user11). 
+
+Watch us present our app here!: https://youtu.be/2uIrUrGG89c?t=1095
 
 ![app screenshot](SkillUp.png)
 
